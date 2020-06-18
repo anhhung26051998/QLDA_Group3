@@ -1,0 +1,438 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{996DE1C6-5CE9-4A46-BDDF-540E256AC769}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44327</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.0.18.1\lib\net40-Client\DelegateDecompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="DelegateDecompiler.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.EntityFramework.0.18.1\lib\net45\DelegateDecompiler.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.1.2\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="IdeaBlade.Core, Version=7.4.0.0, Culture=neutral, PublicKeyToken=287b5094865421c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdeaBlade.DevForce.Core.7.4.0\lib\net45\IdeaBlade.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IdeaBlade.EntityModel, Version=7.4.0.0, Culture=neutral, PublicKeyToken=287b5094865421c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdeaBlade.DevForce.Core.7.4.0\lib\net45\IdeaBlade.EntityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="IdeaBlade.Linq, Version=7.4.0.0, Culture=neutral, PublicKeyToken=287b5094865421c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdeaBlade.DevForce.Core.7.4.0\lib\net45\IdeaBlade.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="IdeaBlade.Validation, Version=7.4.0.0, Culture=neutral, PublicKeyToken=287b5094865421c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdeaBlade.DevForce.Core.7.4.0\lib\net45\IdeaBlade.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="iRely.Common, Version=17.4.6491.18934, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\iRely.Common.17.4.6491.18934\lib\net45\iRely.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.10\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="MailBee.NET.45, Version=10.0.45.502, Culture=neutral, PublicKeyToken=cd85b70fb26f9fc1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailBee.NET.10.0.502\lib\net45\MailBee.NET.45.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Reflection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Reflection.1.1.0.0\lib\Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RestSharp, Version=105.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.2\lib\net46\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Twilio.Api, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.4.7.2\lib\3.5\Twilio.Api.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connect\QLDAdataContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLDAdataContext.edmx</DependentUpon>
+      <LastGenOutput>QLDAdataContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Connect\QLDAdataContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLDAdataContext.edmx</DependentUpon>
+      <LastGenOutput>QLDAdataContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\ChuDauTuBusiness.cs" />
+    <Compile Include="Business\DropDownBusiness.cs" />
+    <Compile Include="Business\DuanBusiness.cs" />
+    <Compile Include="Business\ExportBusiness.cs" />
+    <Compile Include="Business\GenericBusiness.cs" />
+    <Compile Include="Business\UserBusiness.cs" />
+    <Compile Include="Business\VonBusiness.cs" />
+    <Compile Include="Common\DropDownModelOutput.cs" />
+    <Compile Include="Common\Erorracess.cs" />
+    <Compile Include="Common\ResultModel.cs" />
+    <Compile Include="Connect\QLDAdataContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDAdataContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\QLDAdataContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\QLDAdataContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDAdataContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_banqlda.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_banqlda_links.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_chucvu.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_chudautu.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_cocauTMDT.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_cocautochucCDT.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_congtrinh_hangmuc.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_duan.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_giaingan_baocaoquy.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_giaingan_baocaoquy_files.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_giaingan_chitiet.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_giaingan_thuchien.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_coquanthanhtra.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_dieuchinh.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_kehoachlc.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_loaihopdong.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_thanhkiemtra.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_thuchien.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_trungthau.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_trungthau_files.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_goithau_trungthau_loaihopdong.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_hinhthuclc_nhathau.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_hinhthucqlda.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_linhvucdauthau.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_loaiCDT.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_loaihopdong.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_loaitongmucdautu.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_mailconfigs.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_nguonvon.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_phanbovon.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_phuongphapchonthau.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_phuongthucdauthau.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_thongbao.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_thongbao_chitiet.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_tieuduan.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_tinh.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_tongmucdautu.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_vanban_cdt_coquanbh.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_vanban_coquanbanhanh.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_vanban_files.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_vanban_loaivanban.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_vanban_quyetdinh.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_von.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_von_dieuchinh.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_von_giaidoan.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_z_file_images.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_z_folders.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_z_logaccess.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_z_maps.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_z_permissions.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_z_roles.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Connect\tbl_z_users.cs">
+      <DependentUpon>QLDAdataContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChuDauTuModelOutput.cs" />
+    <Compile Include="Model\TinhModelOutput.cs" />
+    <Compile Include="Model\LoginInputModel.cs" />
+    <Compile Include="Model\LoginModelOutput.cs" />
+    <Compile Include="Model\DuanModelOutput.cs" />
+    <Compile Include="Model\TieuDaModelOuput.cs" />
+    <Compile Include="Model\TongMucDauTuModelOutput.cs" />
+    <Compile Include="Model\UserModelOutput.cs" />
+    <Compile Include="Model\VonModelOutput.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Sessions.cs" />
+    <Compile Include="Utils\SystemParam.cs" />
+    <Compile Include="Utils\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Connect\QLDAdataContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLDAdataContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Connect\QLDAdataContext.edmx.diagram">
+      <DependentUpon>QLDAdataContext.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52365</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44327/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

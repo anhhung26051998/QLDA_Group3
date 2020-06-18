@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f4f6532f795541f4b6190ab94d491b1f" Name="Diagram1">
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_banqlda" Width="1.5" PointX="6" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_banqlda_links" Width="1.5" PointX="8.25" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_chucvu" Width="1.5" PointX="12" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_chudautu" Width="1.5" PointX="9" PointY="47.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_cocauTMDT" Width="1.5" PointX="3" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_cocautochucCDT" Width="1.5" PointX="14.25" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_congtrinh_hangmuc" Width="1.5" PointX="18.75" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_duan" Width="1.5" PointX="6" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_giaingan_baocaoquy" Width="1.5" PointX="11.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_giaingan_baocaoquy_files" Width="1.5" PointX="13.5" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_giaingan_chitiet" Width="1.5" PointX="6" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_giaingan_thuchien" Width="1.5" PointX="8.25" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_coquanthanhtra" Width="1.5" PointX="6" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_dieuchinh" Width="1.5" PointX="16.5" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_kehoachlc" Width="1.5" PointX="14.25" PointY="33.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_loaihopdong" Width="1.5" PointX="14.25" PointY="56.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_thanhkiemtra" Width="1.5" PointX="8.25" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_thuchien" Width="1.5" PointX="16.5" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_trungthau" Width="1.5" PointX="12" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_trungthau_files" Width="1.5" PointX="13.5" PointY="43" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_goithau_trungthau_loaihopdong" Width="1.5" PointX="14.25" PointY="60.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_hinhthuclc_nhathau" Width="1.5" PointX="12" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_hinhthucqlda" Width="1.5" PointX="3.75" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_linhvucdauthau" Width="1.5" PointX="12" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_loaiCDT" Width="1.5" PointX="6.75" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_loaihopdong" Width="1.5" PointX="12" PointY="58.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_loaitongmucdautu" Width="1.5" PointX="0.75" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_mailconfigs" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_nguonvon" Width="1.5" PointX="0.75" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_phanbovon" Width="1.5" PointX="3" PointY="51.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_phuongphapchonthau" Width="1.5" PointX="12" PointY="62.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_phuongthucdauthau" Width="1.5" PointX="12" PointY="65.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_thongbao" Width="1.5" PointX="9" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_thongbao_chitiet" Width="1.5" PointX="11.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_tieuduan" Width="1.5" PointX="11.25" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_tinh" Width="1.5" PointX="8.25" PointY="81.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_tongmucdautu" Width="1.5" PointX="16.5" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_vanban_cdt_coquanbh" Width="1.5" PointX="17.25" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_vanban_coquanbanhanh" Width="1.5" PointX="17.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_vanban_files" Width="1.5" PointX="21.75" PointY="33.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_vanban_loaivanban" Width="1.5" PointX="17.25" PointY="48.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_vanban_quyetdinh" Width="1.5" PointX="19.5" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_von" Width="1.5" PointX="14.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_von_dieuchinh" Width="1.5" PointX="16.5" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_von_giaidoan" Width="1.5" PointX="12" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_z_file_images" Width="1.5" PointX="13.5" PointY="46.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_z_folders" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_z_logaccess" Width="1.5" PointX="19.5" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_z_permissions" Width="1.5" PointX="12.75" PointY="74" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_z_roles" Width="1.5" PointX="15" PointY="73.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_z_users" Width="1.5" PointX="17.25" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLDAdataContext.tbl_z_maps" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_banqlda_links_tbl_banqlda" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_banqlda_tbl_chudautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_cocautochucCDT_tbl_banqlda" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_banqlda_links_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_banqlda_links_tbl_tieuduan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_cocautochucCDT_tbl_chucvu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_chudautu_tbl_loaiCDT" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_cocautochucCDT_tbl_chudautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_giaingan_baocaoquy_tbl_chudautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_thongbao_chitiet_tbl_chudautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_tieuduan_tbl_chudautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_vanban_cdt_coquanbh_tbl_chudautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_vanban_quyetdinh_tbl_chudautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_z_users_tbl_chudautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_cocauTMDT_tbl_loaitongmucdautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_cocauTMDT_tbl_nguonvon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_cocauTMDT_tbl_tongmucdautu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_congtrinh_hangmuc_tbl_goithau_thuchien" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_duan_tbl_hinhthucqlda" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_duan_tbl_nguonvon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_giaingan_baocaoquy_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_giaingan_baocaoquy_tbl_duan1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_giaingan_thuchien_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_kehoachlc_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_thanhkiemtra_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_thongbao_chitiet_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_tieuduan_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_tongmucdautu_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_vanban_quyetdinh_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_von_tbl_duan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_giaingan_baocaoquy_files_tbl_giaingan_baocaoquy" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_trungthau_files_tbl_giaingan_baocaoquy" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_z_file_images_tbl_giaingan_baocaoquy" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_giaingan_thuchien_tbl_giaingan_chitiet" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_thanhkiemtra_tbl_goithau_coquanthanhtra" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_dieuchinh_tbl_goithau_kehoachlc" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_kehoachlc_tbl_goithau_trungthau" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_kehoachlc_tbl_hinhthuclc_nhathau" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_kehoachlc_tbl_linhvucdauthau" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_kehoachlc_tbl_loaihopdong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_kehoachlc_tbl_phuongphapchonthau" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_kehoachlc_tbl_phuongthucdauthau" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_thuchien_tbl_goithau_kehoachlc" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_loaihopdong_tbl_loaihopdong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_thanhkiemtra_tbl_tieuduan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_goithau_trungthau_loaihopdong_tbl_loaihopdong" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_phanbovon_tbl_nguonvon" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_thongbao_chitiet_tbl_thongbao" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_tongmucdautu_tbl_tieuduan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_vanban_quyetdinh_tbl_tieuduan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_vanban_quyetdinh_tbl_vanban_cdt_coquanbh" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_vanban_quyetdinh_tbl_vanban_coquanbanhanh" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_vanban_files_tbl_vanban_quyetdinh" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_vanban_quyetdinh_tbl_vanban_loaivanban" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_von_dieuchinh_tbl_von" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_von_tbl_von_giaidoan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_LOG_ACCESS_USERS" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.FK_tbl_z_users_tbl_z_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.tbl_duan_tinh" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.tbl_z_role_permission" ManuallyRouted="false" />
+        <AssociationConnector Association="QLDAdataContext.tbl_z_user_role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

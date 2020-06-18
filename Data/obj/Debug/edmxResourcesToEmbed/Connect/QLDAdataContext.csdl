@@ -1,0 +1,1957 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLDAdataContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_banqlda">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdChudautu" Type="Int32" />
+    <Property Name="Mabanqlda" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tenbanqlda" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_banqlda_links" Relationship="Self.FK_tbl_banqlda_links_tbl_banqlda" FromRole="tbl_banqlda" ToRole="tbl_banqlda_links" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_banqlda_tbl_chudautu" FromRole="tbl_banqlda" ToRole="tbl_chudautu" />
+    <NavigationProperty Name="tbl_cocautochucCDT" Relationship="Self.FK_tbl_cocautochucCDT_tbl_banqlda" FromRole="tbl_banqlda" ToRole="tbl_cocautochucCDT" />
+  </EntityType>
+  <EntityType Name="tbl_banqlda_links">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdBanqlda" Type="Int32" />
+    <Property Name="IdDuan" Type="Int32" />
+    <Property Name="IdTieuduan" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_banqlda" Relationship="Self.FK_tbl_banqlda_links_tbl_banqlda" FromRole="tbl_banqlda_links" ToRole="tbl_banqlda" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_banqlda_links_tbl_duan" FromRole="tbl_banqlda_links" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_tieuduan" Relationship="Self.FK_tbl_banqlda_links_tbl_tieuduan" FromRole="tbl_banqlda_links" ToRole="tbl_tieuduan" />
+  </EntityType>
+  <EntityType Name="tbl_chucvu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Machucvu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tenchucvu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_cocautochucCDT" Relationship="Self.FK_tbl_cocautochucCDT_tbl_chucvu" FromRole="tbl_chucvu" ToRole="tbl_cocautochucCDT" />
+  </EntityType>
+  <EntityType Name="tbl_chudautu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MaCDT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TenCDT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TenCDTfull" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IdLoaiCDT" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="tbl_banqlda" Relationship="Self.FK_tbl_banqlda_tbl_chudautu" FromRole="tbl_chudautu" ToRole="tbl_banqlda" />
+    <NavigationProperty Name="tbl_loaiCDT" Relationship="Self.FK_tbl_chudautu_tbl_loaiCDT" FromRole="tbl_chudautu" ToRole="tbl_loaiCDT" />
+    <NavigationProperty Name="tbl_cocautochucCDT" Relationship="Self.FK_tbl_cocautochucCDT_tbl_chudautu" FromRole="tbl_chudautu" ToRole="tbl_cocautochucCDT" />
+    <NavigationProperty Name="tbl_giaingan_baocaoquy" Relationship="Self.FK_tbl_giaingan_baocaoquy_tbl_chudautu" FromRole="tbl_chudautu" ToRole="tbl_giaingan_baocaoquy" />
+    <NavigationProperty Name="tbl_thongbao_chitiet" Relationship="Self.FK_tbl_thongbao_chitiet_tbl_chudautu" FromRole="tbl_chudautu" ToRole="tbl_thongbao_chitiet" />
+    <NavigationProperty Name="tbl_tieuduan" Relationship="Self.FK_tbl_tieuduan_tbl_chudautu" FromRole="tbl_chudautu" ToRole="tbl_tieuduan" />
+    <NavigationProperty Name="tbl_vanban_cdt_coquanbh" Relationship="Self.FK_tbl_vanban_cdt_coquanbh_tbl_chudautu" FromRole="tbl_chudautu" ToRole="tbl_vanban_cdt_coquanbh" />
+    <NavigationProperty Name="tbl_vanban_quyetdinh" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_chudautu" FromRole="tbl_chudautu" ToRole="tbl_vanban_quyetdinh" />
+    <NavigationProperty Name="tbl_z_users" Relationship="Self.FK_tbl_z_users_tbl_chudautu" FromRole="tbl_chudautu" ToRole="tbl_z_users" />
+  </EntityType>
+  <EntityType Name="tbl_cocauTMDT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTMDT" Type="Int32" />
+    <Property Name="Idnguonvon" Type="Int32" />
+    <Property Name="Xaylap" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Thietbi" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Tuvan" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Quanlyduan" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Khac" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Duphong" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Denbugpmb" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="Int32" />
+    <Property Name="Landieuchinh" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_loaitongmucdautu" Relationship="Self.FK_tbl_cocauTMDT_tbl_loaitongmucdautu" FromRole="tbl_cocauTMDT" ToRole="tbl_loaitongmucdautu" />
+    <NavigationProperty Name="tbl_nguonvon" Relationship="Self.FK_tbl_cocauTMDT_tbl_nguonvon" FromRole="tbl_cocauTMDT" ToRole="tbl_nguonvon" />
+    <NavigationProperty Name="tbl_tongmucdautu" Relationship="Self.FK_tbl_cocauTMDT_tbl_tongmucdautu" FromRole="tbl_cocauTMDT" ToRole="tbl_tongmucdautu" />
+  </EntityType>
+  <EntityType Name="tbl_cocautochucCDT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdChudautu" Type="Int32" />
+    <Property Name="IdBanqlda" Type="Int32" />
+    <Property Name="Chucvu" Type="Int32" />
+    <Property Name="Hoten" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneCQ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_banqlda" Relationship="Self.FK_tbl_cocautochucCDT_tbl_banqlda" FromRole="tbl_cocautochucCDT" ToRole="tbl_banqlda" />
+    <NavigationProperty Name="tbl_chucvu" Relationship="Self.FK_tbl_cocautochucCDT_tbl_chucvu" FromRole="tbl_cocautochucCDT" ToRole="tbl_chucvu" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_cocautochucCDT_tbl_chudautu" FromRole="tbl_cocautochucCDT" ToRole="tbl_chudautu" />
+  </EntityType>
+  <EntityType Name="tbl_congtrinh_hangmuc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MaCongtrinh_hangmuc" Type="Int32" />
+    <Property Name="TenHienThi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaDuAn" Type="Int32" />
+    <Property Name="MaCDT" Type="Int32" />
+    <Property Name="Donvi" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="Khoiluong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdGoithau" Type="Int32" />
+    <Property Name="Thutu" Type="Int32" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="Dongia" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_thuchien" Relationship="Self.FK_tbl_congtrinh_hangmuc_tbl_goithau_thuchien" FromRole="tbl_congtrinh_hangmuc" ToRole="tbl_goithau_thuchien" />
+  </EntityType>
+  <EntityType Name="tbl_duan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Maduan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Diadiemkhobac" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IdChudautu" Type="Int32" />
+    <Property Name="Tenduan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdhinhthucQLDA" Type="Int32" Nullable="false" />
+    <Property Name="Idloainguonvon" Type="Int32" Nullable="false" />
+    <Property Name="Diadiemthuchien" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="QDpheduyetDADT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="QDduyetCTDT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaypheduyet" Type="DateTime" Precision="3" />
+    <Property Name="NgaypheduyetCTDT" Type="DateTime" Precision="3" />
+    <Property Name="Tongmucdautu" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="Urlfile" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Motaduan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="thang_khoicong" Type="Int32" />
+    <Property Name="nam_khoicong" Type="Int32" />
+    <Property Name="thang_hoanthanh" Type="Int32" />
+    <Property Name="nam_hoanthanh" Type="Int32" />
+    <Property Name="Thoigiankhoicong" Type="DateTime" Precision="3" />
+    <Property Name="Thoigianhoanthanh" Type="DateTime" Precision="3" />
+    <Property Name="UrlMaps" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="stt" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_banqlda_links" Relationship="Self.FK_tbl_banqlda_links_tbl_duan" FromRole="tbl_duan" ToRole="tbl_banqlda_links" />
+    <NavigationProperty Name="tbl_hinhthucqlda" Relationship="Self.FK_tbl_duan_tbl_hinhthucqlda" FromRole="tbl_duan" ToRole="tbl_hinhthucqlda" />
+    <NavigationProperty Name="tbl_nguonvon" Relationship="Self.FK_tbl_duan_tbl_nguonvon" FromRole="tbl_duan" ToRole="tbl_nguonvon" />
+    <NavigationProperty Name="tbl_giaingan_baocaoquy" Relationship="Self.FK_tbl_giaingan_baocaoquy_tbl_duan" FromRole="tbl_duan" ToRole="tbl_giaingan_baocaoquy" />
+    <NavigationProperty Name="tbl_giaingan_baocaoquy1" Relationship="Self.FK_tbl_giaingan_baocaoquy_tbl_duan1" FromRole="tbl_duan" ToRole="tbl_giaingan_baocaoquy" />
+    <NavigationProperty Name="tbl_giaingan_thuchien" Relationship="Self.FK_tbl_giaingan_thuchien_tbl_duan" FromRole="tbl_duan" ToRole="tbl_giaingan_thuchien" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_duan" FromRole="tbl_duan" ToRole="tbl_goithau_kehoachlc" />
+    <NavigationProperty Name="tbl_goithau_thanhkiemtra" Relationship="Self.FK_tbl_goithau_thanhkiemtra_tbl_duan" FromRole="tbl_duan" ToRole="tbl_goithau_thanhkiemtra" />
+    <NavigationProperty Name="tbl_thongbao_chitiet" Relationship="Self.FK_tbl_thongbao_chitiet_tbl_duan" FromRole="tbl_duan" ToRole="tbl_thongbao_chitiet" />
+    <NavigationProperty Name="tbl_tieuduan" Relationship="Self.FK_tbl_tieuduan_tbl_duan" FromRole="tbl_duan" ToRole="tbl_tieuduan" />
+    <NavigationProperty Name="tbl_tongmucdautu" Relationship="Self.FK_tbl_tongmucdautu_tbl_duan" FromRole="tbl_duan" ToRole="tbl_tongmucdautu" />
+    <NavigationProperty Name="tbl_vanban_quyetdinh" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_duan" FromRole="tbl_duan" ToRole="tbl_vanban_quyetdinh" />
+    <NavigationProperty Name="tbl_von" Relationship="Self.FK_tbl_von_tbl_duan" FromRole="tbl_duan" ToRole="tbl_von" />
+    <NavigationProperty Name="tbl_tinh" Relationship="Self.tbl_duan_tinh" FromRole="tbl_duan" ToRole="tbl_tinh" />
+  </EntityType>
+  <EntityType Name="tbl_giaingan_baocaoquy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDuan" Type="Int32" />
+    <Property Name="IdTieuduan" Type="Int32" />
+    <Property Name="IdChudautu" Type="Int32" />
+    <Property Name="NamBC" Type="Int32" />
+    <Property Name="Kybaocao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Urlfile" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_giaingan_baocaoquy_tbl_chudautu" FromRole="tbl_giaingan_baocaoquy" ToRole="tbl_chudautu" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_giaingan_baocaoquy_tbl_duan" FromRole="tbl_giaingan_baocaoquy" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_duan1" Relationship="Self.FK_tbl_giaingan_baocaoquy_tbl_duan1" FromRole="tbl_giaingan_baocaoquy" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_giaingan_baocaoquy_files" Relationship="Self.FK_tbl_giaingan_baocaoquy_files_tbl_giaingan_baocaoquy" FromRole="tbl_giaingan_baocaoquy" ToRole="tbl_giaingan_baocaoquy_files" />
+    <NavigationProperty Name="tbl_goithau_trungthau_files" Relationship="Self.FK_tbl_goithau_trungthau_files_tbl_giaingan_baocaoquy" FromRole="tbl_giaingan_baocaoquy" ToRole="tbl_goithau_trungthau_files" />
+    <NavigationProperty Name="tbl_z_file_images" Relationship="Self.FK_tbl_z_file_images_tbl_giaingan_baocaoquy" FromRole="tbl_giaingan_baocaoquy" ToRole="tbl_z_file_images" />
+  </EntityType>
+  <EntityType Name="tbl_giaingan_baocaoquy_files">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDLienket" Type="Int32" />
+    <Property Name="url_files" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_giaingan_baocaoquy" Relationship="Self.FK_tbl_giaingan_baocaoquy_files_tbl_giaingan_baocaoquy" FromRole="tbl_giaingan_baocaoquy_files" ToRole="tbl_giaingan_baocaoquy" />
+  </EntityType>
+  <EntityType Name="tbl_giaingan_chitiet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ketquathuchien_xl" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Ketquathuchien_tv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Ketquathuchien_gpmb" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Ketquagiaingan_xl" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Ketquagiaingan_tv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Ketquagiaingan_gpmb" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Ketquahoanung_xl" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Ketquahoanung_tv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Ketquahoanung_gpmb" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachthuchien_xl" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachthuchien_tv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachthuchien_gpmb" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachgiaingan_xl" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachgiaingan_tv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachgiaingan_gpmb" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachhoanung_xl" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachhoanung_tv" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Kehoachhoanung_gpmb" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="tbl_giaingan_thuchien" Relationship="Self.FK_tbl_giaingan_thuchien_tbl_giaingan_chitiet" FromRole="tbl_giaingan_chitiet" ToRole="tbl_giaingan_thuchien" />
+  </EntityType>
+  <EntityType Name="tbl_giaingan_thuchien">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDuan" Type="Int32" />
+    <Property Name="IdTieuduan" Type="Int32" />
+    <Property Name="IdChudautu" Type="Int32" />
+    <Property Name="Idgiaingan_chitiet" Type="Int32" />
+    <Property Name="ThangTHGN" Type="Int32" />
+    <Property Name="NamTHGN" Type="Int32" />
+    <Property Name="Noidungcongviec" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Khokhandenghi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Filebaocaothang" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_giaingan_thuchien_tbl_duan" FromRole="tbl_giaingan_thuchien" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_giaingan_chitiet" Relationship="Self.FK_tbl_giaingan_thuchien_tbl_giaingan_chitiet" FromRole="tbl_giaingan_thuchien" ToRole="tbl_giaingan_chitiet" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_coquanthanhtra">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaCoquanthanhtra" Type="Int32" />
+    <Property Name="TenCoquanthanhtra" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Order_key" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_thanhkiemtra" Relationship="Self.FK_tbl_goithau_thanhkiemtra_tbl_goithau_coquanthanhtra" FromRole="tbl_goithau_coquanthanhtra" ToRole="tbl_goithau_thanhkiemtra" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_dieuchinh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idgoithau_kehoachlc" Type="Int32" />
+    <Property Name="Sohopdong" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaykyhd" Type="DateTime" Precision="0" />
+    <Property Name="Giahopdong" Type="Decimal" Precision="22" Scale="4" />
+    <Property Name="Time_thuchien_from_month" Type="Int32" />
+    <Property Name="Time_thuchien_from_year" Type="Int32" />
+    <Property Name="Time_thuchien_to_month" Type="Int32" />
+    <Property Name="Time_thuchien_to_year" Type="Int32" />
+    <Property Name="Noidungdieuchinh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Dieuchinhtanggiam" Type="Decimal" Precision="22" Scale="4" />
+    <Property Name="Landieuchinh" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_dieuchinh_tbl_goithau_kehoachlc" FromRole="tbl_goithau_dieuchinh" ToRole="tbl_goithau_kehoachlc" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_kehoachlc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Magoithau" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tengoithau" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IdGoithau_trungthau" Type="Int32" />
+    <Property Name="IdGoithau_thuchien" Type="Int32" />
+    <Property Name="Idduan" Type="Int32" />
+    <Property Name="Idtieuduan" Type="Int32" />
+    <Property Name="IdNguonvon" Type="Int32" />
+    <Property Name="Giagoithau" Type="Decimal" Precision="22" Scale="4" />
+    <Property Name="Time_thuchien_from_month" Type="Int32" />
+    <Property Name="Time_thuchien_from_year" Type="Int32" />
+    <Property Name="Time_thuchien_to_month" Type="Int32" />
+    <Property Name="Time_thuchien_to_year" Type="Int32" />
+    <Property Name="Time_HopDong" Type="Decimal" Precision="13" Scale="1" />
+    <Property Name="Istypeday_timehd" Type="Boolean" />
+    <Property Name="QDkehoachthau_info" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QDkehoachthau_time" Type="DateTime" Precision="0" />
+    <Property Name="QDkehoachthau_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QDkehoachthau_files" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IdHinhthucluachonthau" Type="Int32" />
+    <Property Name="IdPhuongthucdauthau" Type="Int32" />
+    <Property Name="IdLinhvucdauthau" Type="Int32" />
+    <Property Name="IdLoaihopdong" Type="Int32" />
+    <Property Name="IdPhuongphapchonthau" Type="Int32" />
+    <Property Name="IdGoithau_thanhtra" Type="Int32" />
+    <Property Name="Landieuchinh" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_duan" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_goithau_dieuchinh" Relationship="Self.FK_tbl_goithau_dieuchinh_tbl_goithau_kehoachlc" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_goithau_dieuchinh" />
+    <NavigationProperty Name="tbl_goithau_trungthau" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_goithau_trungthau" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_goithau_trungthau" />
+    <NavigationProperty Name="tbl_hinhthuclc_nhathau" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_hinhthuclc_nhathau" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_hinhthuclc_nhathau" />
+    <NavigationProperty Name="tbl_linhvucdauthau" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_linhvucdauthau" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_linhvucdauthau" />
+    <NavigationProperty Name="tbl_loaihopdong" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_loaihopdong" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_loaihopdong" />
+    <NavigationProperty Name="tbl_phuongphapchonthau" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_phuongphapchonthau" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_phuongphapchonthau" />
+    <NavigationProperty Name="tbl_phuongthucdauthau" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_phuongthucdauthau" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_phuongthucdauthau" />
+    <NavigationProperty Name="tbl_goithau_thuchien" Relationship="Self.FK_tbl_goithau_thuchien_tbl_goithau_kehoachlc" FromRole="tbl_goithau_kehoachlc" ToRole="tbl_goithau_thuchien" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_loaihopdong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdHangmucgt" Type="Int32" />
+    <Property Name="IdLoaihd" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_loaihopdong" Relationship="Self.FK_tbl_goithau_loaihopdong_tbl_loaihopdong" FromRole="tbl_goithau_loaihopdong" ToRole="tbl_loaihopdong" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_thanhkiemtra">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Parent" Type="Int32" />
+    <Property Name="IdDuan" Type="Int32" />
+    <Property Name="IdTieuduan" Type="Int32" />
+    <Property Name="IdCoquanthanhtra" Type="Int32" />
+    <Property Name="Noidungthanhtra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Thuhoi" Type="Decimal" Precision="22" Scale="4" />
+    <Property Name="Thanhtoan" Type="Decimal" Precision="22" Scale="4" />
+    <Property Name="Rasoatxuly" Type="Decimal" Precision="22" Scale="4" />
+    <Property Name="Time_thuchien_from_month" Type="Int32" />
+    <Property Name="Time_thuchien_from_year" Type="Int32" />
+    <Property Name="Time_thuchien_to_month" Type="Int32" />
+    <Property Name="Time_thuchien_to_year" Type="Int32" />
+    <Property Name="Thang" Type="Int32" />
+    <Property Name="Nam" Type="Int32" />
+    <Property Name="Landieuchinh" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_goithau_thanhkiemtra_tbl_duan" FromRole="tbl_goithau_thanhkiemtra" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_goithau_coquanthanhtra" Relationship="Self.FK_tbl_goithau_thanhkiemtra_tbl_goithau_coquanthanhtra" FromRole="tbl_goithau_thanhkiemtra" ToRole="tbl_goithau_coquanthanhtra" />
+    <NavigationProperty Name="tbl_tieuduan" Relationship="Self.FK_tbl_goithau_thanhkiemtra_tbl_tieuduan" FromRole="tbl_goithau_thanhkiemtra" ToRole="tbl_tieuduan" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_thuchien">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idgoithau_kehoachlc" Type="Int32" />
+    <Property Name="Timebaocao" Type="DateTime" Precision="0" />
+    <Property Name="Noidungbaocao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Khokhan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_congtrinh_hangmuc" Relationship="Self.FK_tbl_congtrinh_hangmuc_tbl_goithau_thuchien" FromRole="tbl_goithau_thuchien" ToRole="tbl_congtrinh_hangmuc" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_thuchien_tbl_goithau_kehoachlc" FromRole="tbl_goithau_thuchien" ToRole="tbl_goithau_kehoachlc" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_trungthau">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Magoithau_trungthau" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Donvitrungthau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Diachidonvitrungthau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Dutoangoithau" Type="Decimal" Precision="22" Scale="4" />
+    <Property Name="Giatrungthau" Type="Decimal" Precision="22" Scale="4" />
+    <Property Name="QDchonthau_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QDchonthau_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QDchonthau_time" Type="DateTime" Precision="0" />
+    <Property Name="QDchonthau_files" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Time_thuchien_from_month" Type="Int32" />
+    <Property Name="Time_thuchien_from_year" Type="Int32" />
+    <Property Name="Time_thuchien_to_month" Type="Int32" />
+    <Property Name="Time_thuchien_to_year" Type="Int32" />
+    <Property Name="TimethuchienHDTT" Type="Int32" />
+    <Property Name="Istypeday_timehd" Type="Boolean" />
+    <Property Name="IdLoaihopdong" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_goithau_trungthau" FromRole="tbl_goithau_trungthau" ToRole="tbl_goithau_kehoachlc" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_trungthau_files">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDLienket" Type="Int32" />
+    <Property Name="url_files" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_giaingan_baocaoquy" Relationship="Self.FK_tbl_goithau_trungthau_files_tbl_giaingan_baocaoquy" FromRole="tbl_goithau_trungthau_files" ToRole="tbl_giaingan_baocaoquy" />
+  </EntityType>
+  <EntityType Name="tbl_goithau_trungthau_loaihopdong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTrungthau" Type="Int32" />
+    <Property Name="IdLoaihd" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_loaihopdong" Relationship="Self.FK_tbl_goithau_trungthau_loaihopdong_tbl_loaihopdong" FromRole="tbl_goithau_trungthau_loaihopdong" ToRole="tbl_loaihopdong" />
+  </EntityType>
+  <EntityType Name="tbl_hinhthuclc_nhathau">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MaHTLCNhathau" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TenHTLCNhathau" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_hinhthuclc_nhathau" FromRole="tbl_hinhthuclc_nhathau" ToRole="tbl_goithau_kehoachlc" />
+  </EntityType>
+  <EntityType Name="tbl_hinhthucqlda">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MahinhthucQLDA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TenhinhthucQLDA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_duan_tbl_hinhthucqlda" FromRole="tbl_hinhthucqlda" ToRole="tbl_duan" />
+  </EntityType>
+  <EntityType Name="tbl_linhvucdauthau">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Malinhvucdt" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tenlinhvucdt" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_linhvucdauthau" FromRole="tbl_linhvucdauthau" ToRole="tbl_goithau_kehoachlc" />
+  </EntityType>
+  <EntityType Name="tbl_loaiCDT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaloaiCDT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TenloaiCDT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_chudautu_tbl_loaiCDT" FromRole="tbl_loaiCDT" ToRole="tbl_chudautu" />
+  </EntityType>
+  <EntityType Name="tbl_loaihopdong">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Maloaihopdong" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tenloaihopdong" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_loaihopdong" FromRole="tbl_loaihopdong" ToRole="tbl_goithau_kehoachlc" />
+    <NavigationProperty Name="tbl_goithau_loaihopdong" Relationship="Self.FK_tbl_goithau_loaihopdong_tbl_loaihopdong" FromRole="tbl_loaihopdong" ToRole="tbl_goithau_loaihopdong" />
+    <NavigationProperty Name="tbl_goithau_trungthau_loaihopdong" Relationship="Self.FK_tbl_goithau_trungthau_loaihopdong_tbl_loaihopdong" FromRole="tbl_loaihopdong" ToRole="tbl_goithau_trungthau_loaihopdong" />
+  </EntityType>
+  <EntityType Name="tbl_loaitongmucdautu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MaloaiTMDT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TenloaiTMDT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="0" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tbl_cocauTMDT" Relationship="Self.FK_tbl_cocauTMDT_tbl_loaitongmucdautu" FromRole="tbl_loaitongmucdautu" ToRole="tbl_cocauTMDT" />
+  </EntityType>
+  <EntityType Name="tbl_mailconfigs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="User" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Pass" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Protocol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Port" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_nguonvon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Manguonvon" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tennguonvon" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_cocauTMDT" Relationship="Self.FK_tbl_cocauTMDT_tbl_nguonvon" FromRole="tbl_nguonvon" ToRole="tbl_cocauTMDT" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_duan_tbl_nguonvon" FromRole="tbl_nguonvon" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_phanbovon" Relationship="Self.FK_tbl_phanbovon_tbl_nguonvon" FromRole="tbl_nguonvon" ToRole="tbl_phanbovon" />
+  </EntityType>
+  <EntityType Name="tbl_phanbovon">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Maduan" Type="Int32" />
+    <Property Name="Sotienvon" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Giaidoansudung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Motavon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Idnguonvon" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_nguonvon" Relationship="Self.FK_tbl_phanbovon_tbl_nguonvon" FromRole="tbl_phanbovon" ToRole="tbl_nguonvon" />
+  </EntityType>
+  <EntityType Name="tbl_phuongphapchonthau">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mappchonthau" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tenppchonthau" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_phuongphapchonthau" FromRole="tbl_phuongphapchonthau" ToRole="tbl_goithau_kehoachlc" />
+  </EntityType>
+  <EntityType Name="tbl_phuongthucdauthau">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaPTLCNhathau" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TenPTLCNhathau" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_goithau_kehoachlc" Relationship="Self.FK_tbl_goithau_kehoachlc_tbl_phuongthucdauthau" FromRole="tbl_phuongthucdauthau" ToRole="tbl_goithau_kehoachlc" />
+  </EntityType>
+  <EntityType Name="tbl_thongbao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="status" Type="Byte" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_thongbao_chitiet" Relationship="Self.FK_tbl_thongbao_chitiet_tbl_thongbao" FromRole="tbl_thongbao" ToRole="tbl_thongbao_chitiet" />
+  </EntityType>
+  <EntityType Name="tbl_thongbao_chitiet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdNotification" Type="Int32" />
+    <Property Name="IdDuan" Type="Int32" />
+    <Property Name="IdCDT" Type="Int32" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_thongbao_chitiet_tbl_chudautu" FromRole="tbl_thongbao_chitiet" ToRole="tbl_chudautu" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_thongbao_chitiet_tbl_duan" FromRole="tbl_thongbao_chitiet" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_thongbao" Relationship="Self.FK_tbl_thongbao_chitiet_tbl_thongbao" FromRole="tbl_thongbao_chitiet" ToRole="tbl_thongbao" />
+  </EntityType>
+  <EntityType Name="tbl_tieuduan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Maduan" Type="Int32" />
+    <Property Name="MaCDT" Type="Int32" />
+    <Property Name="Matieuduan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tentieuduan" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Diadiemkhobac" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="tbl_banqlda_links" Relationship="Self.FK_tbl_banqlda_links_tbl_tieuduan" FromRole="tbl_tieuduan" ToRole="tbl_banqlda_links" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_tieuduan_tbl_chudautu" FromRole="tbl_tieuduan" ToRole="tbl_chudautu" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_tieuduan_tbl_duan" FromRole="tbl_tieuduan" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_goithau_thanhkiemtra" Relationship="Self.FK_tbl_goithau_thanhkiemtra_tbl_tieuduan" FromRole="tbl_tieuduan" ToRole="tbl_goithau_thanhkiemtra" />
+    <NavigationProperty Name="tbl_tongmucdautu" Relationship="Self.FK_tbl_tongmucdautu_tbl_tieuduan" FromRole="tbl_tieuduan" ToRole="tbl_tongmucdautu" />
+    <NavigationProperty Name="tbl_vanban_quyetdinh" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_tieuduan" FromRole="tbl_tieuduan" ToRole="tbl_vanban_quyetdinh" />
+  </EntityType>
+  <EntityType Name="tbl_tinh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaTinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenTinh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.tbl_duan_tinh" FromRole="tbl_tinh" ToRole="tbl_duan" />
+  </EntityType>
+  <EntityType Name="tbl_tongmucdautu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaTMDT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="GiatridutoanTMDT" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="IdDuan" Type="Int32" />
+    <Property Name="IdTieuduan" Type="Int32" />
+    <Property Name="Landieuchinh" Type="Int32" />
+    <Property Name="state" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="0" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="0" />
+    <Property Name="QDDuyetDC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ThoigianQDPD" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tbl_cocauTMDT" Relationship="Self.FK_tbl_cocauTMDT_tbl_tongmucdautu" FromRole="tbl_tongmucdautu" ToRole="tbl_cocauTMDT" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_tongmucdautu_tbl_duan" FromRole="tbl_tongmucdautu" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_tieuduan" Relationship="Self.FK_tbl_tongmucdautu_tbl_tieuduan" FromRole="tbl_tongmucdautu" ToRole="tbl_tieuduan" />
+  </EntityType>
+  <EntityType Name="tbl_vanban_cdt_coquanbh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idcdt" Type="Int32" Nullable="false" />
+    <Property Name="Tencqbh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Orders" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_vanban_cdt_coquanbh_tbl_chudautu" FromRole="tbl_vanban_cdt_coquanbh" ToRole="tbl_chudautu" />
+    <NavigationProperty Name="tbl_vanban_quyetdinh" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_cdt_coquanbh" FromRole="tbl_vanban_cdt_coquanbh" ToRole="tbl_vanban_quyetdinh" />
+  </EntityType>
+  <EntityType Name="tbl_vanban_coquanbanhanh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tencoquanbh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Orders" Type="Int32" />
+    <Property Name="Ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_vanban_quyetdinh" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_coquanbanhanh" FromRole="tbl_vanban_coquanbanhanh" ToRole="tbl_vanban_quyetdinh" />
+  </EntityType>
+  <EntityType Name="tbl_vanban_files">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDVanbanqd" Type="Int32" />
+    <Property Name="VBQD_files" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_vanban_quyetdinh" Relationship="Self.FK_tbl_vanban_files_tbl_vanban_quyetdinh" FromRole="tbl_vanban_files" ToRole="tbl_vanban_quyetdinh" />
+  </EntityType>
+  <EntityType Name="tbl_vanban_loaivanban">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Tenloaivbqd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Orders" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_vanban_quyetdinh" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_loaivanban" FromRole="tbl_vanban_loaivanban" ToRole="tbl_vanban_quyetdinh" />
+  </EntityType>
+  <EntityType Name="tbl_vanban_quyetdinh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDuan" Type="Int32" />
+    <Property Name="IdCdt" Type="Int32" />
+    <Property Name="IdTieuduan" Type="Int32" />
+    <Property Name="IdLoaivanban" Type="Int32" />
+    <Property Name="IdCoquanbh" Type="Int32" />
+    <Property Name="Idcdt_coquanbh" Type="Int32" />
+    <Property Name="VBQD_no_num" Type="Int32" />
+    <Property Name="VBQD_no_str" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VBQD_time" Type="DateTime" Precision="0" />
+    <Property Name="VBQD_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VBQD_files" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ghichu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_chudautu" FromRole="tbl_vanban_quyetdinh" ToRole="tbl_chudautu" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_duan" FromRole="tbl_vanban_quyetdinh" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_tieuduan" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_tieuduan" FromRole="tbl_vanban_quyetdinh" ToRole="tbl_tieuduan" />
+    <NavigationProperty Name="tbl_vanban_cdt_coquanbh" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_cdt_coquanbh" FromRole="tbl_vanban_quyetdinh" ToRole="tbl_vanban_cdt_coquanbh" />
+    <NavigationProperty Name="tbl_vanban_coquanbanhanh" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_coquanbanhanh" FromRole="tbl_vanban_quyetdinh" ToRole="tbl_vanban_coquanbanhanh" />
+    <NavigationProperty Name="tbl_vanban_files" Relationship="Self.FK_tbl_vanban_files_tbl_vanban_quyetdinh" FromRole="tbl_vanban_quyetdinh" ToRole="tbl_vanban_files" />
+    <NavigationProperty Name="tbl_vanban_loaivanban" Relationship="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_loaivanban" FromRole="tbl_vanban_quyetdinh" ToRole="tbl_vanban_loaivanban" />
+  </EntityType>
+  <EntityType Name="tbl_von">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mavon" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tenvon" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Maduan" Type="Int32" />
+    <Property Name="Matieuduan" Type="Int32" />
+    <Property Name="Magiaidoan" Type="Int32" />
+    <Property Name="Giatritien" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="Landieuchinh" Type="Int32" />
+    <Property Name="state" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_duan" Relationship="Self.FK_tbl_von_tbl_duan" FromRole="tbl_von" ToRole="tbl_duan" />
+    <NavigationProperty Name="tbl_von_dieuchinh" Relationship="Self.FK_tbl_von_dieuchinh_tbl_von" FromRole="tbl_von" ToRole="tbl_von_dieuchinh" />
+    <NavigationProperty Name="tbl_von_giaidoan" Relationship="Self.FK_tbl_von_tbl_von_giaidoan" FromRole="tbl_von" ToRole="tbl_von_giaidoan" />
+  </EntityType>
+  <EntityType Name="tbl_von_dieuchinh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mavon" Type="Int32" />
+    <Property Name="Landieuchinh" Type="Int32" />
+    <Property Name="state" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <Property Name="Giatritien" Type="Decimal" Precision="18" Scale="4" />
+    <NavigationProperty Name="tbl_von" Relationship="Self.FK_tbl_von_dieuchinh_tbl_von" FromRole="tbl_von_dieuchinh" ToRole="tbl_von" />
+  </EntityType>
+  <EntityType Name="tbl_von_giaidoan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tengiaidoan" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_von" Relationship="Self.FK_tbl_von_tbl_von_giaidoan" FromRole="tbl_von_giaidoan" ToRole="tbl_von" />
+  </EntityType>
+  <EntityType Name="tbl_z_file_images">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ThangTHGN" Type="Int32" />
+    <Property Name="NamTHGN" Type="Int32" />
+    <Property Name="path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tenthumuc" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="IdLienket" Type="Int32" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Cate" Type="Int32" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_giaingan_baocaoquy" Relationship="Self.FK_tbl_z_file_images_tbl_giaingan_baocaoquy" FromRole="tbl_z_file_images" ToRole="tbl_giaingan_baocaoquy" />
+  </EntityType>
+  <EntityType Name="tbl_z_folders">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="updated_at" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="created_time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cate" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_z_logaccess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="page" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tbl_z_users" Relationship="Self.FK_LOG_ACCESS_USERS" FromRole="tbl_z_logaccess" ToRole="tbl_z_users" />
+  </EntityType>
+  <EntityType Name="tbl_z_permissions">
+    <Key>
+      <PropertyRef Name="Permission_Id" />
+    </Key>
+    <Property Name="Permission_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PermissionName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PermissionDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_z_roles" Relationship="Self.tbl_z_role_permission" FromRole="tbl_z_permissions" ToRole="tbl_z_roles" />
+  </EntityType>
+  <EntityType Name="tbl_z_roles">
+    <Key>
+      <PropertyRef Name="Role_Id" />
+    </Key>
+    <Property Name="Role_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IsSysAdmin" Type="Boolean" />
+    <NavigationProperty Name="tbl_z_users" Relationship="Self.FK_tbl_z_users_tbl_z_roles" FromRole="tbl_z_roles" ToRole="tbl_z_users" />
+    <NavigationProperty Name="tbl_z_permissions" Relationship="Self.tbl_z_role_permission" FromRole="tbl_z_roles" ToRole="tbl_z_permissions" />
+    <NavigationProperty Name="tbl_z_users1" Relationship="Self.tbl_z_user_role" FromRole="tbl_z_roles" ToRole="tbl_z_users" />
+  </EntityType>
+  <EntityType Name="tbl_z_users">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdRole" Type="Int32" />
+    <Property Name="IdChudautu" Type="Int32" />
+    <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastModified" Type="DateTime" Precision="3" />
+    <Property Name="Inactive" Type="Boolean" />
+    <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Initial" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="token" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_chudautu" Relationship="Self.FK_tbl_z_users_tbl_chudautu" FromRole="tbl_z_users" ToRole="tbl_chudautu" />
+    <NavigationProperty Name="tbl_z_logaccess" Relationship="Self.FK_LOG_ACCESS_USERS" FromRole="tbl_z_users" ToRole="tbl_z_logaccess" />
+    <NavigationProperty Name="tbl_z_roles" Relationship="Self.FK_tbl_z_users_tbl_z_roles" FromRole="tbl_z_users" ToRole="tbl_z_roles" />
+    <NavigationProperty Name="tbl_z_roles1" Relationship="Self.tbl_z_user_role" FromRole="tbl_z_users" ToRole="tbl_z_roles" />
+  </EntityType>
+  <EntityType Name="tbl_z_maps">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lat" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Long" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Tenhienthi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Mota" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="Nguoitao" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaytao" Type="DateTime" Precision="3" />
+    <Property Name="Nguoisua" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaysua" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_tbl_banqlda_links_tbl_banqlda">
+    <End Role="tbl_banqlda" Type="Self.tbl_banqlda" Multiplicity="0..1" />
+    <End Role="tbl_banqlda_links" Type="Self.tbl_banqlda_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_banqlda">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_banqlda_links">
+        <PropertyRef Name="IdBanqlda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_banqlda_tbl_chudautu">
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="0..1" />
+    <End Role="tbl_banqlda" Type="Self.tbl_banqlda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chudautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_banqlda">
+        <PropertyRef Name="IdChudautu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_cocautochucCDT_tbl_banqlda">
+    <End Role="tbl_banqlda" Type="Self.tbl_banqlda" Multiplicity="0..1" />
+    <End Role="tbl_cocautochucCDT" Type="Self.tbl_cocautochucCDT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_banqlda">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_cocautochucCDT">
+        <PropertyRef Name="IdBanqlda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_banqlda_links_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_banqlda_links" Type="Self.tbl_banqlda_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_banqlda_links">
+        <PropertyRef Name="IdDuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_banqlda_links_tbl_tieuduan">
+    <End Role="tbl_tieuduan" Type="Self.tbl_tieuduan" Multiplicity="0..1" />
+    <End Role="tbl_banqlda_links" Type="Self.tbl_banqlda_links" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_tieuduan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_banqlda_links">
+        <PropertyRef Name="IdTieuduan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_cocautochucCDT_tbl_chucvu">
+    <End Role="tbl_chucvu" Type="Self.tbl_chucvu" Multiplicity="0..1" />
+    <End Role="tbl_cocautochucCDT" Type="Self.tbl_cocautochucCDT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chucvu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_cocautochucCDT">
+        <PropertyRef Name="Chucvu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_chudautu_tbl_loaiCDT">
+    <End Role="tbl_loaiCDT" Type="Self.tbl_loaiCDT" Multiplicity="0..1" />
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_loaiCDT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_chudautu">
+        <PropertyRef Name="IdLoaiCDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_cocautochucCDT_tbl_chudautu">
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="0..1" />
+    <End Role="tbl_cocautochucCDT" Type="Self.tbl_cocautochucCDT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chudautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_cocautochucCDT">
+        <PropertyRef Name="IdChudautu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_giaingan_baocaoquy_tbl_chudautu">
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="0..1" />
+    <End Role="tbl_giaingan_baocaoquy" Type="Self.tbl_giaingan_baocaoquy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chudautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_giaingan_baocaoquy">
+        <PropertyRef Name="IdChudautu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_thongbao_chitiet_tbl_chudautu">
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="0..1" />
+    <End Role="tbl_thongbao_chitiet" Type="Self.tbl_thongbao_chitiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chudautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_thongbao_chitiet">
+        <PropertyRef Name="IdCDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_tieuduan_tbl_chudautu">
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="0..1" />
+    <End Role="tbl_tieuduan" Type="Self.tbl_tieuduan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chudautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_tieuduan">
+        <PropertyRef Name="MaCDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vanban_cdt_coquanbh_tbl_chudautu">
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="1" />
+    <End Role="tbl_vanban_cdt_coquanbh" Type="Self.tbl_vanban_cdt_coquanbh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chudautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_vanban_cdt_coquanbh">
+        <PropertyRef Name="Idcdt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vanban_quyetdinh_tbl_chudautu">
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="0..1" />
+    <End Role="tbl_vanban_quyetdinh" Type="Self.tbl_vanban_quyetdinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chudautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_vanban_quyetdinh">
+        <PropertyRef Name="IdCdt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_z_users_tbl_chudautu">
+    <End Role="tbl_chudautu" Type="Self.tbl_chudautu" Multiplicity="0..1" />
+    <End Role="tbl_z_users" Type="Self.tbl_z_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_chudautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_z_users">
+        <PropertyRef Name="IdChudautu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_cocauTMDT_tbl_loaitongmucdautu">
+    <End Role="tbl_loaitongmucdautu" Type="Self.tbl_loaitongmucdautu" Multiplicity="0..1" />
+    <End Role="tbl_cocauTMDT" Type="Self.tbl_cocauTMDT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_loaitongmucdautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_cocauTMDT">
+        <PropertyRef Name="IdTMDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_cocauTMDT_tbl_nguonvon">
+    <End Role="tbl_nguonvon" Type="Self.tbl_nguonvon" Multiplicity="0..1" />
+    <End Role="tbl_cocauTMDT" Type="Self.tbl_cocauTMDT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_nguonvon">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_cocauTMDT">
+        <PropertyRef Name="Idnguonvon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_cocauTMDT_tbl_tongmucdautu">
+    <End Role="tbl_tongmucdautu" Type="Self.tbl_tongmucdautu" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_cocauTMDT" Type="Self.tbl_cocauTMDT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_tongmucdautu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_cocauTMDT">
+        <PropertyRef Name="IdTMDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_congtrinh_hangmuc_tbl_goithau_thuchien">
+    <End Role="tbl_goithau_thuchien" Type="Self.tbl_goithau_thuchien" Multiplicity="0..1" />
+    <End Role="tbl_congtrinh_hangmuc" Type="Self.tbl_congtrinh_hangmuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_goithau_thuchien">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_congtrinh_hangmuc">
+        <PropertyRef Name="IdGoithau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_duan_tbl_hinhthucqlda">
+    <End Role="tbl_hinhthucqlda" Type="Self.tbl_hinhthucqlda" Multiplicity="1" />
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_hinhthucqlda">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_duan">
+        <PropertyRef Name="IdhinhthucQLDA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_duan_tbl_nguonvon">
+    <End Role="tbl_nguonvon" Type="Self.tbl_nguonvon" Multiplicity="1" />
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_nguonvon">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_duan">
+        <PropertyRef Name="Idloainguonvon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_giaingan_baocaoquy_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_giaingan_baocaoquy" Type="Self.tbl_giaingan_baocaoquy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_giaingan_baocaoquy">
+        <PropertyRef Name="IdDuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_giaingan_baocaoquy_tbl_duan1">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_giaingan_baocaoquy" Type="Self.tbl_giaingan_baocaoquy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_giaingan_baocaoquy">
+        <PropertyRef Name="IdDuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_giaingan_thuchien_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_giaingan_thuchien" Type="Self.tbl_giaingan_thuchien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_giaingan_thuchien">
+        <PropertyRef Name="IdDuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_kehoachlc_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="Idduan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_thanhkiemtra_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_goithau_thanhkiemtra" Type="Self.tbl_goithau_thanhkiemtra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_goithau_thanhkiemtra">
+        <PropertyRef Name="IdDuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_thongbao_chitiet_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_thongbao_chitiet" Type="Self.tbl_thongbao_chitiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_thongbao_chitiet">
+        <PropertyRef Name="IdDuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_tieuduan_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_tieuduan" Type="Self.tbl_tieuduan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_tieuduan">
+        <PropertyRef Name="Maduan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_tongmucdautu_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_tongmucdautu" Type="Self.tbl_tongmucdautu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_tongmucdautu">
+        <PropertyRef Name="IdDuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vanban_quyetdinh_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_vanban_quyetdinh" Type="Self.tbl_vanban_quyetdinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_vanban_quyetdinh">
+        <PropertyRef Name="IdDuan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_von_tbl_duan">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="0..1" />
+    <End Role="tbl_von" Type="Self.tbl_von" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_duan">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_von">
+        <PropertyRef Name="Maduan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_giaingan_baocaoquy_files_tbl_giaingan_baocaoquy">
+    <End Role="tbl_giaingan_baocaoquy" Type="Self.tbl_giaingan_baocaoquy" Multiplicity="0..1" />
+    <End Role="tbl_giaingan_baocaoquy_files" Type="Self.tbl_giaingan_baocaoquy_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_giaingan_baocaoquy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_giaingan_baocaoquy_files">
+        <PropertyRef Name="IDLienket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_trungthau_files_tbl_giaingan_baocaoquy">
+    <End Role="tbl_giaingan_baocaoquy" Type="Self.tbl_giaingan_baocaoquy" Multiplicity="0..1" />
+    <End Role="tbl_goithau_trungthau_files" Type="Self.tbl_goithau_trungthau_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_giaingan_baocaoquy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_goithau_trungthau_files">
+        <PropertyRef Name="IDLienket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_z_file_images_tbl_giaingan_baocaoquy">
+    <End Role="tbl_giaingan_baocaoquy" Type="Self.tbl_giaingan_baocaoquy" Multiplicity="0..1" />
+    <End Role="tbl_z_file_images" Type="Self.tbl_z_file_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_giaingan_baocaoquy">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tbl_z_file_images">
+        <PropertyRef Name="IdLienket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_giaingan_thuchien_tbl_giaingan_chitiet">
+    <End Role="tbl_giaingan_chitiet" Type="Self.tbl_giaingan_chitiet" Multiplicity="0..1" />
+    <End Role="tbl_giaingan_thuchien" Type="Self.tbl_giaingan_thuchien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_giaingan_chitiet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_giaingan_thuchien">
+        <PropertyRef Name="Idgiaingan_chitiet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_thanhkiemtra_tbl_goithau_coquanthanhtra">
+    <End Role="tbl_goithau_coquanthanhtra" Type="Self.tbl_goithau_coquanthanhtra" Multiplicity="0..1" />
+    <End Role="tbl_goithau_thanhkiemtra" Type="Self.tbl_goithau_thanhkiemtra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_goithau_coquanthanhtra">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_thanhkiemtra">
+        <PropertyRef Name="IdCoquanthanhtra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_dieuchinh_tbl_goithau_kehoachlc">
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tbl_goithau_dieuchinh" Type="Self.tbl_goithau_dieuchinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_dieuchinh">
+        <PropertyRef Name="Idgoithau_kehoachlc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_kehoachlc_tbl_goithau_trungthau">
+    <End Role="tbl_goithau_trungthau" Type="Self.tbl_goithau_trungthau" Multiplicity="0..1" />
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_goithau_trungthau">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="IdGoithau_trungthau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_kehoachlc_tbl_hinhthuclc_nhathau">
+    <End Role="tbl_hinhthuclc_nhathau" Type="Self.tbl_hinhthuclc_nhathau" Multiplicity="0..1" />
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_hinhthuclc_nhathau">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="IdHinhthucluachonthau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_kehoachlc_tbl_linhvucdauthau">
+    <End Role="tbl_linhvucdauthau" Type="Self.tbl_linhvucdauthau" Multiplicity="0..1" />
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_linhvucdauthau">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="IdLinhvucdauthau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_kehoachlc_tbl_loaihopdong">
+    <End Role="tbl_loaihopdong" Type="Self.tbl_loaihopdong" Multiplicity="0..1" />
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_loaihopdong">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="IdLoaihopdong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_kehoachlc_tbl_phuongphapchonthau">
+    <End Role="tbl_phuongphapchonthau" Type="Self.tbl_phuongphapchonthau" Multiplicity="0..1" />
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_phuongphapchonthau">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="IdPhuongphapchonthau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_kehoachlc_tbl_phuongthucdauthau">
+    <End Role="tbl_phuongthucdauthau" Type="Self.tbl_phuongthucdauthau" Multiplicity="0..1" />
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_phuongthucdauthau">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="IdPhuongthucdauthau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_thuchien_tbl_goithau_kehoachlc">
+    <End Role="tbl_goithau_kehoachlc" Type="Self.tbl_goithau_kehoachlc" Multiplicity="0..1" />
+    <End Role="tbl_goithau_thuchien" Type="Self.tbl_goithau_thuchien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_goithau_kehoachlc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_thuchien">
+        <PropertyRef Name="Idgoithau_kehoachlc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_loaihopdong_tbl_loaihopdong">
+    <End Role="tbl_loaihopdong" Type="Self.tbl_loaihopdong" Multiplicity="0..1" />
+    <End Role="tbl_goithau_loaihopdong" Type="Self.tbl_goithau_loaihopdong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_loaihopdong">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_loaihopdong">
+        <PropertyRef Name="IdLoaihd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_thanhkiemtra_tbl_tieuduan">
+    <End Role="tbl_tieuduan" Type="Self.tbl_tieuduan" Multiplicity="0..1" />
+    <End Role="tbl_goithau_thanhkiemtra" Type="Self.tbl_goithau_thanhkiemtra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_tieuduan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_thanhkiemtra">
+        <PropertyRef Name="IdTieuduan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_goithau_trungthau_loaihopdong_tbl_loaihopdong">
+    <End Role="tbl_loaihopdong" Type="Self.tbl_loaihopdong" Multiplicity="0..1" />
+    <End Role="tbl_goithau_trungthau_loaihopdong" Type="Self.tbl_goithau_trungthau_loaihopdong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_loaihopdong">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_goithau_trungthau_loaihopdong">
+        <PropertyRef Name="IdLoaihd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_phanbovon_tbl_nguonvon">
+    <End Role="tbl_nguonvon" Type="Self.tbl_nguonvon" Multiplicity="0..1" />
+    <End Role="tbl_phanbovon" Type="Self.tbl_phanbovon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_nguonvon">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_phanbovon">
+        <PropertyRef Name="Idnguonvon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_thongbao_chitiet_tbl_thongbao">
+    <End Role="tbl_thongbao" Type="Self.tbl_thongbao" Multiplicity="0..1" />
+    <End Role="tbl_thongbao_chitiet" Type="Self.tbl_thongbao_chitiet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_thongbao">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_thongbao_chitiet">
+        <PropertyRef Name="IdNotification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_tongmucdautu_tbl_tieuduan">
+    <End Role="tbl_tieuduan" Type="Self.tbl_tieuduan" Multiplicity="0..1" />
+    <End Role="tbl_tongmucdautu" Type="Self.tbl_tongmucdautu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_tieuduan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_tongmucdautu">
+        <PropertyRef Name="IdTieuduan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vanban_quyetdinh_tbl_tieuduan">
+    <End Role="tbl_tieuduan" Type="Self.tbl_tieuduan" Multiplicity="0..1" />
+    <End Role="tbl_vanban_quyetdinh" Type="Self.tbl_vanban_quyetdinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_tieuduan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_vanban_quyetdinh">
+        <PropertyRef Name="IdTieuduan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vanban_quyetdinh_tbl_vanban_cdt_coquanbh">
+    <End Role="tbl_vanban_cdt_coquanbh" Type="Self.tbl_vanban_cdt_coquanbh" Multiplicity="0..1" />
+    <End Role="tbl_vanban_quyetdinh" Type="Self.tbl_vanban_quyetdinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_vanban_cdt_coquanbh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_vanban_quyetdinh">
+        <PropertyRef Name="Idcdt_coquanbh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vanban_quyetdinh_tbl_vanban_coquanbanhanh">
+    <End Role="tbl_vanban_coquanbanhanh" Type="Self.tbl_vanban_coquanbanhanh" Multiplicity="0..1" />
+    <End Role="tbl_vanban_quyetdinh" Type="Self.tbl_vanban_quyetdinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_vanban_coquanbanhanh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_vanban_quyetdinh">
+        <PropertyRef Name="IdCoquanbh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vanban_files_tbl_vanban_quyetdinh">
+    <End Role="tbl_vanban_quyetdinh" Type="Self.tbl_vanban_quyetdinh" Multiplicity="0..1" />
+    <End Role="tbl_vanban_files" Type="Self.tbl_vanban_files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_vanban_quyetdinh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_vanban_files">
+        <PropertyRef Name="IDVanbanqd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_vanban_quyetdinh_tbl_vanban_loaivanban">
+    <End Role="tbl_vanban_loaivanban" Type="Self.tbl_vanban_loaivanban" Multiplicity="0..1" />
+    <End Role="tbl_vanban_quyetdinh" Type="Self.tbl_vanban_quyetdinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_vanban_loaivanban">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_vanban_quyetdinh">
+        <PropertyRef Name="IdLoaivanban" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_von_dieuchinh_tbl_von">
+    <End Role="tbl_von" Type="Self.tbl_von" Multiplicity="0..1" />
+    <End Role="tbl_von_dieuchinh" Type="Self.tbl_von_dieuchinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_von">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_von_dieuchinh">
+        <PropertyRef Name="Mavon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_von_tbl_von_giaidoan">
+    <End Role="tbl_von_giaidoan" Type="Self.tbl_von_giaidoan" Multiplicity="0..1" />
+    <End Role="tbl_von" Type="Self.tbl_von" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_von_giaidoan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tbl_von">
+        <PropertyRef Name="Magiaidoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOG_ACCESS_USERS">
+    <End Role="tbl_z_users" Type="Self.tbl_z_users" Multiplicity="1" />
+    <End Role="tbl_z_logaccess" Type="Self.tbl_z_logaccess" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_z_users">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="tbl_z_logaccess">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_z_users_tbl_z_roles">
+    <End Role="tbl_z_roles" Type="Self.tbl_z_roles" Multiplicity="0..1" />
+    <End Role="tbl_z_users" Type="Self.tbl_z_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_z_roles">
+        <PropertyRef Name="Role_Id" />
+      </Principal>
+      <Dependent Role="tbl_z_users">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tbl_duan_tinh">
+    <End Role="tbl_duan" Type="Self.tbl_duan" Multiplicity="*" />
+    <End Role="tbl_tinh" Type="Self.tbl_tinh" Multiplicity="*" />
+  </Association>
+  <Association Name="tbl_z_role_permission">
+    <End Role="tbl_z_permissions" Type="Self.tbl_z_permissions" Multiplicity="*" />
+    <End Role="tbl_z_roles" Type="Self.tbl_z_roles" Multiplicity="*" />
+  </Association>
+  <Association Name="tbl_z_user_role">
+    <End Role="tbl_z_roles" Type="Self.tbl_z_roles" Multiplicity="*" />
+    <End Role="tbl_z_users" Type="Self.tbl_z_users" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_banqlda" EntityType="Self.tbl_banqlda" />
+    <EntitySet Name="tbl_banqlda_links" EntityType="Self.tbl_banqlda_links" />
+    <EntitySet Name="tbl_chucvu" EntityType="Self.tbl_chucvu" />
+    <EntitySet Name="tbl_chudautu" EntityType="Self.tbl_chudautu" />
+    <EntitySet Name="tbl_cocauTMDT" EntityType="Self.tbl_cocauTMDT" />
+    <EntitySet Name="tbl_cocautochucCDT" EntityType="Self.tbl_cocautochucCDT" />
+    <EntitySet Name="tbl_congtrinh_hangmuc" EntityType="Self.tbl_congtrinh_hangmuc" />
+    <EntitySet Name="tbl_duan" EntityType="Self.tbl_duan" />
+    <EntitySet Name="tbl_giaingan_baocaoquy" EntityType="Self.tbl_giaingan_baocaoquy" />
+    <EntitySet Name="tbl_giaingan_baocaoquy_files" EntityType="Self.tbl_giaingan_baocaoquy_files" />
+    <EntitySet Name="tbl_giaingan_chitiet" EntityType="Self.tbl_giaingan_chitiet" />
+    <EntitySet Name="tbl_giaingan_thuchien" EntityType="Self.tbl_giaingan_thuchien" />
+    <EntitySet Name="tbl_goithau_coquanthanhtra" EntityType="Self.tbl_goithau_coquanthanhtra" />
+    <EntitySet Name="tbl_goithau_dieuchinh" EntityType="Self.tbl_goithau_dieuchinh" />
+    <EntitySet Name="tbl_goithau_kehoachlc" EntityType="Self.tbl_goithau_kehoachlc" />
+    <EntitySet Name="tbl_goithau_loaihopdong" EntityType="Self.tbl_goithau_loaihopdong" />
+    <EntitySet Name="tbl_goithau_thanhkiemtra" EntityType="Self.tbl_goithau_thanhkiemtra" />
+    <EntitySet Name="tbl_goithau_thuchien" EntityType="Self.tbl_goithau_thuchien" />
+    <EntitySet Name="tbl_goithau_trungthau" EntityType="Self.tbl_goithau_trungthau" />
+    <EntitySet Name="tbl_goithau_trungthau_files" EntityType="Self.tbl_goithau_trungthau_files" />
+    <EntitySet Name="tbl_goithau_trungthau_loaihopdong" EntityType="Self.tbl_goithau_trungthau_loaihopdong" />
+    <EntitySet Name="tbl_hinhthuclc_nhathau" EntityType="Self.tbl_hinhthuclc_nhathau" />
+    <EntitySet Name="tbl_hinhthucqlda" EntityType="Self.tbl_hinhthucqlda" />
+    <EntitySet Name="tbl_linhvucdauthau" EntityType="Self.tbl_linhvucdauthau" />
+    <EntitySet Name="tbl_loaiCDT" EntityType="Self.tbl_loaiCDT" />
+    <EntitySet Name="tbl_loaihopdong" EntityType="Self.tbl_loaihopdong" />
+    <EntitySet Name="tbl_loaitongmucdautu" EntityType="Self.tbl_loaitongmucdautu" />
+    <EntitySet Name="tbl_mailconfigs" EntityType="Self.tbl_mailconfigs" />
+    <EntitySet Name="tbl_nguonvon" EntityType="Self.tbl_nguonvon" />
+    <EntitySet Name="tbl_phanbovon" EntityType="Self.tbl_phanbovon" />
+    <EntitySet Name="tbl_phuongphapchonthau" EntityType="Self.tbl_phuongphapchonthau" />
+    <EntitySet Name="tbl_phuongthucdauthau" EntityType="Self.tbl_phuongthucdauthau" />
+    <EntitySet Name="tbl_thongbao" EntityType="Self.tbl_thongbao" />
+    <EntitySet Name="tbl_thongbao_chitiet" EntityType="Self.tbl_thongbao_chitiet" />
+    <EntitySet Name="tbl_tieuduan" EntityType="Self.tbl_tieuduan" />
+    <EntitySet Name="tbl_tinh" EntityType="Self.tbl_tinh" />
+    <EntitySet Name="tbl_tongmucdautu" EntityType="Self.tbl_tongmucdautu" />
+    <EntitySet Name="tbl_vanban_cdt_coquanbh" EntityType="Self.tbl_vanban_cdt_coquanbh" />
+    <EntitySet Name="tbl_vanban_coquanbanhanh" EntityType="Self.tbl_vanban_coquanbanhanh" />
+    <EntitySet Name="tbl_vanban_files" EntityType="Self.tbl_vanban_files" />
+    <EntitySet Name="tbl_vanban_loaivanban" EntityType="Self.tbl_vanban_loaivanban" />
+    <EntitySet Name="tbl_vanban_quyetdinh" EntityType="Self.tbl_vanban_quyetdinh" />
+    <EntitySet Name="tbl_von" EntityType="Self.tbl_von" />
+    <EntitySet Name="tbl_von_dieuchinh" EntityType="Self.tbl_von_dieuchinh" />
+    <EntitySet Name="tbl_von_giaidoan" EntityType="Self.tbl_von_giaidoan" />
+    <EntitySet Name="tbl_z_file_images" EntityType="Self.tbl_z_file_images" />
+    <EntitySet Name="tbl_z_folders" EntityType="Self.tbl_z_folders" />
+    <EntitySet Name="tbl_z_logaccess" EntityType="Self.tbl_z_logaccess" />
+    <EntitySet Name="tbl_z_permissions" EntityType="Self.tbl_z_permissions" />
+    <EntitySet Name="tbl_z_roles" EntityType="Self.tbl_z_roles" />
+    <EntitySet Name="tbl_z_users" EntityType="Self.tbl_z_users" />
+    <EntitySet Name="tbl_z_maps" EntityType="Self.tbl_z_maps" />
+    <AssociationSet Name="FK_tbl_banqlda_links_tbl_banqlda" Association="Self.FK_tbl_banqlda_links_tbl_banqlda">
+      <End Role="tbl_banqlda" EntitySet="tbl_banqlda" />
+      <End Role="tbl_banqlda_links" EntitySet="tbl_banqlda_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_banqlda_tbl_chudautu" Association="Self.FK_tbl_banqlda_tbl_chudautu">
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+      <End Role="tbl_banqlda" EntitySet="tbl_banqlda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_cocautochucCDT_tbl_banqlda" Association="Self.FK_tbl_cocautochucCDT_tbl_banqlda">
+      <End Role="tbl_banqlda" EntitySet="tbl_banqlda" />
+      <End Role="tbl_cocautochucCDT" EntitySet="tbl_cocautochucCDT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_banqlda_links_tbl_duan" Association="Self.FK_tbl_banqlda_links_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_banqlda_links" EntitySet="tbl_banqlda_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_banqlda_links_tbl_tieuduan" Association="Self.FK_tbl_banqlda_links_tbl_tieuduan">
+      <End Role="tbl_tieuduan" EntitySet="tbl_tieuduan" />
+      <End Role="tbl_banqlda_links" EntitySet="tbl_banqlda_links" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_cocautochucCDT_tbl_chucvu" Association="Self.FK_tbl_cocautochucCDT_tbl_chucvu">
+      <End Role="tbl_chucvu" EntitySet="tbl_chucvu" />
+      <End Role="tbl_cocautochucCDT" EntitySet="tbl_cocautochucCDT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_chudautu_tbl_loaiCDT" Association="Self.FK_tbl_chudautu_tbl_loaiCDT">
+      <End Role="tbl_loaiCDT" EntitySet="tbl_loaiCDT" />
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_cocautochucCDT_tbl_chudautu" Association="Self.FK_tbl_cocautochucCDT_tbl_chudautu">
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+      <End Role="tbl_cocautochucCDT" EntitySet="tbl_cocautochucCDT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_giaingan_baocaoquy_tbl_chudautu" Association="Self.FK_tbl_giaingan_baocaoquy_tbl_chudautu">
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+      <End Role="tbl_giaingan_baocaoquy" EntitySet="tbl_giaingan_baocaoquy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_thongbao_chitiet_tbl_chudautu" Association="Self.FK_tbl_thongbao_chitiet_tbl_chudautu">
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+      <End Role="tbl_thongbao_chitiet" EntitySet="tbl_thongbao_chitiet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_tieuduan_tbl_chudautu" Association="Self.FK_tbl_tieuduan_tbl_chudautu">
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+      <End Role="tbl_tieuduan" EntitySet="tbl_tieuduan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vanban_cdt_coquanbh_tbl_chudautu" Association="Self.FK_tbl_vanban_cdt_coquanbh_tbl_chudautu">
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+      <End Role="tbl_vanban_cdt_coquanbh" EntitySet="tbl_vanban_cdt_coquanbh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vanban_quyetdinh_tbl_chudautu" Association="Self.FK_tbl_vanban_quyetdinh_tbl_chudautu">
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+      <End Role="tbl_vanban_quyetdinh" EntitySet="tbl_vanban_quyetdinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_z_users_tbl_chudautu" Association="Self.FK_tbl_z_users_tbl_chudautu">
+      <End Role="tbl_chudautu" EntitySet="tbl_chudautu" />
+      <End Role="tbl_z_users" EntitySet="tbl_z_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_cocauTMDT_tbl_loaitongmucdautu" Association="Self.FK_tbl_cocauTMDT_tbl_loaitongmucdautu">
+      <End Role="tbl_loaitongmucdautu" EntitySet="tbl_loaitongmucdautu" />
+      <End Role="tbl_cocauTMDT" EntitySet="tbl_cocauTMDT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_cocauTMDT_tbl_nguonvon" Association="Self.FK_tbl_cocauTMDT_tbl_nguonvon">
+      <End Role="tbl_nguonvon" EntitySet="tbl_nguonvon" />
+      <End Role="tbl_cocauTMDT" EntitySet="tbl_cocauTMDT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_cocauTMDT_tbl_tongmucdautu" Association="Self.FK_tbl_cocauTMDT_tbl_tongmucdautu">
+      <End Role="tbl_tongmucdautu" EntitySet="tbl_tongmucdautu" />
+      <End Role="tbl_cocauTMDT" EntitySet="tbl_cocauTMDT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_congtrinh_hangmuc_tbl_goithau_thuchien" Association="Self.FK_tbl_congtrinh_hangmuc_tbl_goithau_thuchien">
+      <End Role="tbl_goithau_thuchien" EntitySet="tbl_goithau_thuchien" />
+      <End Role="tbl_congtrinh_hangmuc" EntitySet="tbl_congtrinh_hangmuc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_duan_tbl_hinhthucqlda" Association="Self.FK_tbl_duan_tbl_hinhthucqlda">
+      <End Role="tbl_hinhthucqlda" EntitySet="tbl_hinhthucqlda" />
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_duan_tbl_nguonvon" Association="Self.FK_tbl_duan_tbl_nguonvon">
+      <End Role="tbl_nguonvon" EntitySet="tbl_nguonvon" />
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_giaingan_baocaoquy_tbl_duan" Association="Self.FK_tbl_giaingan_baocaoquy_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_giaingan_baocaoquy" EntitySet="tbl_giaingan_baocaoquy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_giaingan_baocaoquy_tbl_duan1" Association="Self.FK_tbl_giaingan_baocaoquy_tbl_duan1">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_giaingan_baocaoquy" EntitySet="tbl_giaingan_baocaoquy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_giaingan_thuchien_tbl_duan" Association="Self.FK_tbl_giaingan_thuchien_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_giaingan_thuchien" EntitySet="tbl_giaingan_thuchien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_kehoachlc_tbl_duan" Association="Self.FK_tbl_goithau_kehoachlc_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_thanhkiemtra_tbl_duan" Association="Self.FK_tbl_goithau_thanhkiemtra_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_goithau_thanhkiemtra" EntitySet="tbl_goithau_thanhkiemtra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_thongbao_chitiet_tbl_duan" Association="Self.FK_tbl_thongbao_chitiet_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_thongbao_chitiet" EntitySet="tbl_thongbao_chitiet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_tieuduan_tbl_duan" Association="Self.FK_tbl_tieuduan_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_tieuduan" EntitySet="tbl_tieuduan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_tongmucdautu_tbl_duan" Association="Self.FK_tbl_tongmucdautu_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_tongmucdautu" EntitySet="tbl_tongmucdautu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vanban_quyetdinh_tbl_duan" Association="Self.FK_tbl_vanban_quyetdinh_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_vanban_quyetdinh" EntitySet="tbl_vanban_quyetdinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_von_tbl_duan" Association="Self.FK_tbl_von_tbl_duan">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_von" EntitySet="tbl_von" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_giaingan_baocaoquy_files_tbl_giaingan_baocaoquy" Association="Self.FK_tbl_giaingan_baocaoquy_files_tbl_giaingan_baocaoquy">
+      <End Role="tbl_giaingan_baocaoquy" EntitySet="tbl_giaingan_baocaoquy" />
+      <End Role="tbl_giaingan_baocaoquy_files" EntitySet="tbl_giaingan_baocaoquy_files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_trungthau_files_tbl_giaingan_baocaoquy" Association="Self.FK_tbl_goithau_trungthau_files_tbl_giaingan_baocaoquy">
+      <End Role="tbl_giaingan_baocaoquy" EntitySet="tbl_giaingan_baocaoquy" />
+      <End Role="tbl_goithau_trungthau_files" EntitySet="tbl_goithau_trungthau_files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_z_file_images_tbl_giaingan_baocaoquy" Association="Self.FK_tbl_z_file_images_tbl_giaingan_baocaoquy">
+      <End Role="tbl_giaingan_baocaoquy" EntitySet="tbl_giaingan_baocaoquy" />
+      <End Role="tbl_z_file_images" EntitySet="tbl_z_file_images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_giaingan_thuchien_tbl_giaingan_chitiet" Association="Self.FK_tbl_giaingan_thuchien_tbl_giaingan_chitiet">
+      <End Role="tbl_giaingan_chitiet" EntitySet="tbl_giaingan_chitiet" />
+      <End Role="tbl_giaingan_thuchien" EntitySet="tbl_giaingan_thuchien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_thanhkiemtra_tbl_goithau_coquanthanhtra" Association="Self.FK_tbl_goithau_thanhkiemtra_tbl_goithau_coquanthanhtra">
+      <End Role="tbl_goithau_coquanthanhtra" EntitySet="tbl_goithau_coquanthanhtra" />
+      <End Role="tbl_goithau_thanhkiemtra" EntitySet="tbl_goithau_thanhkiemtra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_dieuchinh_tbl_goithau_kehoachlc" Association="Self.FK_tbl_goithau_dieuchinh_tbl_goithau_kehoachlc">
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+      <End Role="tbl_goithau_dieuchinh" EntitySet="tbl_goithau_dieuchinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_kehoachlc_tbl_goithau_trungthau" Association="Self.FK_tbl_goithau_kehoachlc_tbl_goithau_trungthau">
+      <End Role="tbl_goithau_trungthau" EntitySet="tbl_goithau_trungthau" />
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_kehoachlc_tbl_hinhthuclc_nhathau" Association="Self.FK_tbl_goithau_kehoachlc_tbl_hinhthuclc_nhathau">
+      <End Role="tbl_hinhthuclc_nhathau" EntitySet="tbl_hinhthuclc_nhathau" />
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_kehoachlc_tbl_linhvucdauthau" Association="Self.FK_tbl_goithau_kehoachlc_tbl_linhvucdauthau">
+      <End Role="tbl_linhvucdauthau" EntitySet="tbl_linhvucdauthau" />
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_kehoachlc_tbl_loaihopdong" Association="Self.FK_tbl_goithau_kehoachlc_tbl_loaihopdong">
+      <End Role="tbl_loaihopdong" EntitySet="tbl_loaihopdong" />
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_kehoachlc_tbl_phuongphapchonthau" Association="Self.FK_tbl_goithau_kehoachlc_tbl_phuongphapchonthau">
+      <End Role="tbl_phuongphapchonthau" EntitySet="tbl_phuongphapchonthau" />
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_kehoachlc_tbl_phuongthucdauthau" Association="Self.FK_tbl_goithau_kehoachlc_tbl_phuongthucdauthau">
+      <End Role="tbl_phuongthucdauthau" EntitySet="tbl_phuongthucdauthau" />
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_thuchien_tbl_goithau_kehoachlc" Association="Self.FK_tbl_goithau_thuchien_tbl_goithau_kehoachlc">
+      <End Role="tbl_goithau_kehoachlc" EntitySet="tbl_goithau_kehoachlc" />
+      <End Role="tbl_goithau_thuchien" EntitySet="tbl_goithau_thuchien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_loaihopdong_tbl_loaihopdong" Association="Self.FK_tbl_goithau_loaihopdong_tbl_loaihopdong">
+      <End Role="tbl_loaihopdong" EntitySet="tbl_loaihopdong" />
+      <End Role="tbl_goithau_loaihopdong" EntitySet="tbl_goithau_loaihopdong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_thanhkiemtra_tbl_tieuduan" Association="Self.FK_tbl_goithau_thanhkiemtra_tbl_tieuduan">
+      <End Role="tbl_tieuduan" EntitySet="tbl_tieuduan" />
+      <End Role="tbl_goithau_thanhkiemtra" EntitySet="tbl_goithau_thanhkiemtra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_goithau_trungthau_loaihopdong_tbl_loaihopdong" Association="Self.FK_tbl_goithau_trungthau_loaihopdong_tbl_loaihopdong">
+      <End Role="tbl_loaihopdong" EntitySet="tbl_loaihopdong" />
+      <End Role="tbl_goithau_trungthau_loaihopdong" EntitySet="tbl_goithau_trungthau_loaihopdong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_phanbovon_tbl_nguonvon" Association="Self.FK_tbl_phanbovon_tbl_nguonvon">
+      <End Role="tbl_nguonvon" EntitySet="tbl_nguonvon" />
+      <End Role="tbl_phanbovon" EntitySet="tbl_phanbovon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_thongbao_chitiet_tbl_thongbao" Association="Self.FK_tbl_thongbao_chitiet_tbl_thongbao">
+      <End Role="tbl_thongbao" EntitySet="tbl_thongbao" />
+      <End Role="tbl_thongbao_chitiet" EntitySet="tbl_thongbao_chitiet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_tongmucdautu_tbl_tieuduan" Association="Self.FK_tbl_tongmucdautu_tbl_tieuduan">
+      <End Role="tbl_tieuduan" EntitySet="tbl_tieuduan" />
+      <End Role="tbl_tongmucdautu" EntitySet="tbl_tongmucdautu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vanban_quyetdinh_tbl_tieuduan" Association="Self.FK_tbl_vanban_quyetdinh_tbl_tieuduan">
+      <End Role="tbl_tieuduan" EntitySet="tbl_tieuduan" />
+      <End Role="tbl_vanban_quyetdinh" EntitySet="tbl_vanban_quyetdinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vanban_quyetdinh_tbl_vanban_cdt_coquanbh" Association="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_cdt_coquanbh">
+      <End Role="tbl_vanban_cdt_coquanbh" EntitySet="tbl_vanban_cdt_coquanbh" />
+      <End Role="tbl_vanban_quyetdinh" EntitySet="tbl_vanban_quyetdinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vanban_quyetdinh_tbl_vanban_coquanbanhanh" Association="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_coquanbanhanh">
+      <End Role="tbl_vanban_coquanbanhanh" EntitySet="tbl_vanban_coquanbanhanh" />
+      <End Role="tbl_vanban_quyetdinh" EntitySet="tbl_vanban_quyetdinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vanban_files_tbl_vanban_quyetdinh" Association="Self.FK_tbl_vanban_files_tbl_vanban_quyetdinh">
+      <End Role="tbl_vanban_quyetdinh" EntitySet="tbl_vanban_quyetdinh" />
+      <End Role="tbl_vanban_files" EntitySet="tbl_vanban_files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_vanban_quyetdinh_tbl_vanban_loaivanban" Association="Self.FK_tbl_vanban_quyetdinh_tbl_vanban_loaivanban">
+      <End Role="tbl_vanban_loaivanban" EntitySet="tbl_vanban_loaivanban" />
+      <End Role="tbl_vanban_quyetdinh" EntitySet="tbl_vanban_quyetdinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_von_dieuchinh_tbl_von" Association="Self.FK_tbl_von_dieuchinh_tbl_von">
+      <End Role="tbl_von" EntitySet="tbl_von" />
+      <End Role="tbl_von_dieuchinh" EntitySet="tbl_von_dieuchinh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_von_tbl_von_giaidoan" Association="Self.FK_tbl_von_tbl_von_giaidoan">
+      <End Role="tbl_von_giaidoan" EntitySet="tbl_von_giaidoan" />
+      <End Role="tbl_von" EntitySet="tbl_von" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOG_ACCESS_USERS" Association="Self.FK_LOG_ACCESS_USERS">
+      <End Role="tbl_z_users" EntitySet="tbl_z_users" />
+      <End Role="tbl_z_logaccess" EntitySet="tbl_z_logaccess" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_z_users_tbl_z_roles" Association="Self.FK_tbl_z_users_tbl_z_roles">
+      <End Role="tbl_z_roles" EntitySet="tbl_z_roles" />
+      <End Role="tbl_z_users" EntitySet="tbl_z_users" />
+    </AssociationSet>
+    <AssociationSet Name="tbl_duan_tinh" Association="Self.tbl_duan_tinh">
+      <End Role="tbl_duan" EntitySet="tbl_duan" />
+      <End Role="tbl_tinh" EntitySet="tbl_tinh" />
+    </AssociationSet>
+    <AssociationSet Name="tbl_z_role_permission" Association="Self.tbl_z_role_permission">
+      <End Role="tbl_z_permissions" EntitySet="tbl_z_permissions" />
+      <End Role="tbl_z_roles" EntitySet="tbl_z_roles" />
+    </AssociationSet>
+    <AssociationSet Name="tbl_z_user_role" Association="Self.tbl_z_user_role">
+      <End Role="tbl_z_roles" EntitySet="tbl_z_roles" />
+      <End Role="tbl_z_users" EntitySet="tbl_z_users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

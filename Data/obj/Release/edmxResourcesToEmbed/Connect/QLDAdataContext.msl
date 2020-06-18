@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLDAdataContextStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="tbl_banqlda">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_banqlda">
+        <MappingFragment StoreEntitySet="tbl_banqlda">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdChudautu" ColumnName="IdChudautu" />
+          <ScalarProperty Name="Mabanqlda" ColumnName="Mabanqlda" />
+          <ScalarProperty Name="Tenbanqlda" ColumnName="Tenbanqlda" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_banqlda_links">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_banqlda_links">
+        <MappingFragment StoreEntitySet="tbl_banqlda_links">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdBanqlda" ColumnName="IdBanqlda" />
+          <ScalarProperty Name="IdDuan" ColumnName="IdDuan" />
+          <ScalarProperty Name="IdTieuduan" ColumnName="IdTieuduan" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_chucvu">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_chucvu">
+        <MappingFragment StoreEntitySet="tbl_chucvu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Machucvu" ColumnName="Machucvu" />
+          <ScalarProperty Name="Tenchucvu" ColumnName="Tenchucvu" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_chudautu">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_chudautu">
+        <MappingFragment StoreEntitySet="tbl_chudautu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="MaCDT" ColumnName="MaCDT" />
+          <ScalarProperty Name="TenCDT" ColumnName="TenCDT" />
+          <ScalarProperty Name="TenCDTfull" ColumnName="TenCDTfull" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="IdLoaiCDT" ColumnName="IdLoaiCDT" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_cocauTMDT">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_cocauTMDT">
+        <MappingFragment StoreEntitySet="tbl_cocauTMDT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdTMDT" ColumnName="IdTMDT" />
+          <ScalarProperty Name="Idnguonvon" ColumnName="Idnguonvon" />
+          <ScalarProperty Name="Xaylap" ColumnName="Xaylap" />
+          <ScalarProperty Name="Thietbi" ColumnName="Thietbi" />
+          <ScalarProperty Name="Tuvan" ColumnName="Tuvan" />
+          <ScalarProperty Name="Quanlyduan" ColumnName="Quanlyduan" />
+          <ScalarProperty Name="Khac" ColumnName="Khac" />
+          <ScalarProperty Name="Duphong" ColumnName="Duphong" />
+          <ScalarProperty Name="Denbugpmb" ColumnName="Denbugpmb" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Landieuchinh" ColumnName="Landieuchinh" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_cocautochucCDT">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_cocautochucCDT">
+        <MappingFragment StoreEntitySet="tbl_cocautochucCDT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdChudautu" ColumnName="IdChudautu" />
+          <ScalarProperty Name="IdBanqlda" ColumnName="IdBanqlda" />
+          <ScalarProperty Name="Chucvu" ColumnName="Chucvu" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="PhoneCQ" ColumnName="PhoneCQ" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_congtrinh_hangmuc">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_congtrinh_hangmuc">
+        <MappingFragment StoreEntitySet="tbl_congtrinh_hangmuc">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaCongtrinh_hangmuc" ColumnName="MaCongtrinh_hangmuc" />
+          <ScalarProperty Name="TenHienThi" ColumnName="TenHienThi" />
+          <ScalarProperty Name="MaDuAn" ColumnName="MaDuAn" />
+          <ScalarProperty Name="MaCDT" ColumnName="MaCDT" />
+          <ScalarProperty Name="Donvi" ColumnName="Donvi" />
+          <ScalarProperty Name="Khoiluong" ColumnName="Khoiluong" />
+          <ScalarProperty Name="IdGoithau" ColumnName="IdGoithau" />
+          <ScalarProperty Name="Thutu" ColumnName="Thutu" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_duan">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_duan">
+        <MappingFragment StoreEntitySet="tbl_duan">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="Maduan" ColumnName="Maduan" />
+          <ScalarProperty Name="Diadiemkhobac" ColumnName="Diadiemkhobac" />
+          <ScalarProperty Name="IdChudautu" ColumnName="IdChudautu" />
+          <ScalarProperty Name="Tenduan" ColumnName="Tenduan" />
+          <ScalarProperty Name="IdhinhthucQLDA" ColumnName="IdhinhthucQLDA" />
+          <ScalarProperty Name="Idloainguonvon" ColumnName="Idloainguonvon" />
+          <ScalarProperty Name="Diadiemthuchien" ColumnName="Diadiemthuchien" />
+          <ScalarProperty Name="QDpheduyetDADT" ColumnName="QDpheduyetDADT" />
+          <ScalarProperty Name="QDduyetCTDT" ColumnName="QDduyetCTDT" />
+          <ScalarProperty Name="Ngaypheduyet" ColumnName="Ngaypheduyet" />
+          <ScalarProperty Name="NgaypheduyetCTDT" ColumnName="NgaypheduyetCTDT" />
+          <ScalarProperty Name="Tongmucdautu" ColumnName="Tongmucdautu" />
+          <ScalarProperty Name="Urlfile" ColumnName="Urlfile" />
+          <ScalarProperty Name="Motaduan" ColumnName="Motaduan" />
+          <ScalarProperty Name="thang_khoicong" ColumnName="thang_khoicong" />
+          <ScalarProperty Name="nam_khoicong" ColumnName="nam_khoicong" />
+          <ScalarProperty Name="thang_hoanthanh" ColumnName="thang_hoanthanh" />
+          <ScalarProperty Name="nam_hoanthanh" ColumnName="nam_hoanthanh" />
+          <ScalarProperty Name="Thoigiankhoicong" ColumnName="Thoigiankhoicong" />
+          <ScalarProperty Name="Thoigianhoanthanh" ColumnName="Thoigianhoanthanh" />
+          <ScalarProperty Name="UrlMaps" ColumnName="UrlMaps" />
+          <ScalarProperty Name="stt" ColumnName="stt" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_giaingan_baocaoquy">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_giaingan_baocaoquy">
+        <MappingFragment StoreEntitySet="tbl_giaingan_baocaoquy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdDuan" ColumnName="IdDuan" />
+          <ScalarProperty Name="IdTieuduan" ColumnName="IdTieuduan" />
+          <ScalarProperty Name="IdChudautu" ColumnName="IdChudautu" />
+          <ScalarProperty Name="NamBC" ColumnName="NamBC" />
+          <ScalarProperty Name="Kybaocao" ColumnName="Kybaocao" />
+          <ScalarProperty Name="Urlfile" ColumnName="Urlfile" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_giaingan_baocaoquy_files">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_giaingan_baocaoquy_files">
+        <MappingFragment StoreEntitySet="tbl_giaingan_baocaoquy_files">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDLienket" ColumnName="IDLienket" />
+          <ScalarProperty Name="url_files" ColumnName="url_files" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_giaingan_chitiet">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_giaingan_chitiet">
+        <MappingFragment StoreEntitySet="tbl_giaingan_chitiet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ketquathuchien_xl" ColumnName="Ketquathuchien_xl" />
+          <ScalarProperty Name="Ketquathuchien_tv" ColumnName="Ketquathuchien_tv" />
+          <ScalarProperty Name="Ketquathuchien_gpmb" ColumnName="Ketquathuchien_gpmb" />
+          <ScalarProperty Name="Ketquagiaingan_xl" ColumnName="Ketquagiaingan_xl" />
+          <ScalarProperty Name="Ketquagiaingan_tv" ColumnName="Ketquagiaingan_tv" />
+          <ScalarProperty Name="Ketquagiaingan_gpmb" ColumnName="Ketquagiaingan_gpmb" />
+          <ScalarProperty Name="Ketquahoanung_xl" ColumnName="Ketquahoanung_xl" />
+          <ScalarProperty Name="Ketquahoanung_tv" ColumnName="Ketquahoanung_tv" />
+          <ScalarProperty Name="Ketquahoanung_gpmb" ColumnName="Ketquahoanung_gpmb" />
+          <ScalarProperty Name="Kehoachthuchien_xl" ColumnName="Kehoachthuchien_xl" />
+          <ScalarProperty Name="Kehoachthuchien_tv" ColumnName="Kehoachthuchien_tv" />
+          <ScalarProperty Name="Kehoachthuchien_gpmb" ColumnName="Kehoachthuchien_gpmb" />
+          <ScalarProperty Name="Kehoachgiaingan_xl" ColumnName="Kehoachgiaingan_xl" />
+          <ScalarProperty Name="Kehoachgiaingan_tv" ColumnName="Kehoachgiaingan_tv" />
+          <ScalarProperty Name="Kehoachgiaingan_gpmb" ColumnName="Kehoachgiaingan_gpmb" />
+          <ScalarProperty Name="Kehoachhoanung_xl" ColumnName="Kehoachhoanung_xl" />
+          <ScalarProperty Name="Kehoachhoanung_tv" ColumnName="Kehoachhoanung_tv" />
+          <ScalarProperty Name="Kehoachhoanung_gpmb" ColumnName="Kehoachhoanung_gpmb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_giaingan_thuchien">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_giaingan_thuchien">
+        <MappingFragment StoreEntitySet="tbl_giaingan_thuchien">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdDuan" ColumnName="IdDuan" />
+          <ScalarProperty Name="IdTieuduan" ColumnName="IdTieuduan" />
+          <ScalarProperty Name="IdChudautu" ColumnName="IdChudautu" />
+          <ScalarProperty Name="Idgiaingan_chitiet" ColumnName="Idgiaingan_chitiet" />
+          <ScalarProperty Name="ThangTHGN" ColumnName="ThangTHGN" />
+          <ScalarProperty Name="NamTHGN" ColumnName="NamTHGN" />
+          <ScalarProperty Name="Noidungcongviec" ColumnName="Noidungcongviec" />
+          <ScalarProperty Name="Khokhandenghi" ColumnName="Khokhandenghi" />
+          <ScalarProperty Name="Filebaocaothang" ColumnName="Filebaocaothang" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_coquanthanhtra">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_coquanthanhtra">
+        <MappingFragment StoreEntitySet="tbl_goithau_coquanthanhtra">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaCoquanthanhtra" ColumnName="MaCoquanthanhtra" />
+          <ScalarProperty Name="TenCoquanthanhtra" ColumnName="TenCoquanthanhtra" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Order_key" ColumnName="Order_key" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_dieuchinh">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_dieuchinh">
+        <MappingFragment StoreEntitySet="tbl_goithau_dieuchinh">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Idgoithau_kehoachlc" ColumnName="Idgoithau_kehoachlc" />
+          <ScalarProperty Name="Sohopdong" ColumnName="Sohopdong" />
+          <ScalarProperty Name="Ngaykyhd" ColumnName="Ngaykyhd" />
+          <ScalarProperty Name="Giahopdong" ColumnName="Giahopdong" />
+          <ScalarProperty Name="Time_thuchien_from_month" ColumnName="Time_thuchien_from_month" />
+          <ScalarProperty Name="Time_thuchien_from_year" ColumnName="Time_thuchien_from_year" />
+          <ScalarProperty Name="Time_thuchien_to_month" ColumnName="Time_thuchien_to_month" />
+          <ScalarProperty Name="Time_thuchien_to_year" ColumnName="Time_thuchien_to_year" />
+          <ScalarProperty Name="Noidungdieuchinh" ColumnName="Noidungdieuchinh" />
+          <ScalarProperty Name="Dieuchinhtanggiam" ColumnName="Dieuchinhtanggiam" />
+          <ScalarProperty Name="Landieuchinh" ColumnName="Landieuchinh" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_kehoachlc">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_kehoachlc">
+        <MappingFragment StoreEntitySet="tbl_goithau_kehoachlc">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Magoithau" ColumnName="Magoithau" />
+          <ScalarProperty Name="Tengoithau" ColumnName="Tengoithau" />
+          <ScalarProperty Name="IdGoithau_trungthau" ColumnName="IdGoithau_trungthau" />
+          <ScalarProperty Name="IdGoithau_thuchien" ColumnName="IdGoithau_thuchien" />
+          <ScalarProperty Name="Idduan" ColumnName="Idduan" />
+          <ScalarProperty Name="Idtieuduan" ColumnName="Idtieuduan" />
+          <ScalarProperty Name="IdNguonvon" ColumnName="IdNguonvon" />
+          <ScalarProperty Name="Giagoithau" ColumnName="Giagoithau" />
+          <ScalarProperty Name="Time_thuchien_from_month" ColumnName="Time_thuchien_from_month" />
+          <ScalarProperty Name="Time_thuchien_from_year" ColumnName="Time_thuchien_from_year" />
+          <ScalarProperty Name="Time_thuchien_to_month" ColumnName="Time_thuchien_to_month" />
+          <ScalarProperty Name="Time_thuchien_to_year" ColumnName="Time_thuchien_to_year" />
+          <ScalarProperty Name="Time_HopDong" ColumnName="Time_HopDong" />
+          <ScalarProperty Name="Istypeday_timehd" ColumnName="Istypeday_timehd" />
+          <ScalarProperty Name="QDkehoachthau_info" ColumnName="QDkehoachthau_info" />
+          <ScalarProperty Name="QDkehoachthau_time" ColumnName="QDkehoachthau_time" />
+          <ScalarProperty Name="QDkehoachthau_no" ColumnName="QDkehoachthau_no" />
+          <ScalarProperty Name="QDkehoachthau_files" ColumnName="QDkehoachthau_files" />
+          <ScalarProperty Name="IdHinhthucluachonthau" ColumnName="IdHinhthucluachonthau" />
+          <ScalarProperty Name="IdPhuongthucdauthau" ColumnName="IdPhuongthucdauthau" />
+          <ScalarProperty Name="IdLinhvucdauthau" ColumnName="IdLinhvucdauthau" />
+          <ScalarProperty Name="IdLoaihopdong" ColumnName="IdLoaihopdong" />
+          <ScalarProperty Name="IdPhuongphapchonthau" ColumnName="IdPhuongphapchonthau" />
+          <ScalarProperty Name="IdGoithau_thanhtra" ColumnName="IdGoithau_thanhtra" />
+          <ScalarProperty Name="Landieuchinh" ColumnName="Landieuchinh" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_loaihopdong">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_loaihopdong">
+        <MappingFragment StoreEntitySet="tbl_goithau_loaihopdong">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdHangmucgt" ColumnName="IdHangmucgt" />
+          <ScalarProperty Name="IdLoaihd" ColumnName="IdLoaihd" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_thanhkiemtra">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_thanhkiemtra">
+        <MappingFragment StoreEntitySet="tbl_goithau_thanhkiemtra">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="IdDuan" ColumnName="IdDuan" />
+          <ScalarProperty Name="IdTieuduan" ColumnName="IdTieuduan" />
+          <ScalarProperty Name="IdCoquanthanhtra" ColumnName="IdCoquanthanhtra" />
+          <ScalarProperty Name="Noidungthanhtra" ColumnName="Noidungthanhtra" />
+          <ScalarProperty Name="Thuhoi" ColumnName="Thuhoi" />
+          <ScalarProperty Name="Thanhtoan" ColumnName="Thanhtoan" />
+          <ScalarProperty Name="Rasoatxuly" ColumnName="Rasoatxuly" />
+          <ScalarProperty Name="Time_thuchien_from_month" ColumnName="Time_thuchien_from_month" />
+          <ScalarProperty Name="Time_thuchien_from_year" ColumnName="Time_thuchien_from_year" />
+          <ScalarProperty Name="Time_thuchien_to_month" ColumnName="Time_thuchien_to_month" />
+          <ScalarProperty Name="Time_thuchien_to_year" ColumnName="Time_thuchien_to_year" />
+          <ScalarProperty Name="Thang" ColumnName="Thang" />
+          <ScalarProperty Name="Nam" ColumnName="Nam" />
+          <ScalarProperty Name="Landieuchinh" ColumnName="Landieuchinh" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_thuchien">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_thuchien">
+        <MappingFragment StoreEntitySet="tbl_goithau_thuchien">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Idgoithau_kehoachlc" ColumnName="Idgoithau_kehoachlc" />
+          <ScalarProperty Name="Timebaocao" ColumnName="Timebaocao" />
+          <ScalarProperty Name="Noidungbaocao" ColumnName="Noidungbaocao" />
+          <ScalarProperty Name="Khokhan" ColumnName="Khokhan" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_trungthau">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_trungthau">
+        <MappingFragment StoreEntitySet="tbl_goithau_trungthau">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Magoithau_trungthau" ColumnName="Magoithau_trungthau" />
+          <ScalarProperty Name="Donvitrungthau" ColumnName="Donvitrungthau" />
+          <ScalarProperty Name="Diachidonvitrungthau" ColumnName="Diachidonvitrungthau" />
+          <ScalarProperty Name="Dutoangoithau" ColumnName="Dutoangoithau" />
+          <ScalarProperty Name="Giatrungthau" ColumnName="Giatrungthau" />
+          <ScalarProperty Name="QDchonthau_no" ColumnName="QDchonthau_no" />
+          <ScalarProperty Name="QDchonthau_info" ColumnName="QDchonthau_info" />
+          <ScalarProperty Name="QDchonthau_time" ColumnName="QDchonthau_time" />
+          <ScalarProperty Name="QDchonthau_files" ColumnName="QDchonthau_files" />
+          <ScalarProperty Name="Time_thuchien_from_month" ColumnName="Time_thuchien_from_month" />
+          <ScalarProperty Name="Time_thuchien_from_year" ColumnName="Time_thuchien_from_year" />
+          <ScalarProperty Name="Time_thuchien_to_month" ColumnName="Time_thuchien_to_month" />
+          <ScalarProperty Name="Time_thuchien_to_year" ColumnName="Time_thuchien_to_year" />
+          <ScalarProperty Name="TimethuchienHDTT" ColumnName="TimethuchienHDTT" />
+          <ScalarProperty Name="Istypeday_timehd" ColumnName="Istypeday_timehd" />
+          <ScalarProperty Name="IdLoaihopdong" ColumnName="IdLoaihopdong" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_trungthau_files">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_trungthau_files">
+        <MappingFragment StoreEntitySet="tbl_goithau_trungthau_files">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDLienket" ColumnName="IDLienket" />
+          <ScalarProperty Name="url_files" ColumnName="url_files" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goithau_trungthau_loaihopdong">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_goithau_trungthau_loaihopdong">
+        <MappingFragment StoreEntitySet="tbl_goithau_trungthau_loaihopdong">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdTrungthau" ColumnName="IdTrungthau" />
+          <ScalarProperty Name="IdLoaihd" ColumnName="IdLoaihd" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_hinhthuclc_nhathau">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_hinhthuclc_nhathau">
+        <MappingFragment StoreEntitySet="tbl_hinhthuclc_nhathau">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaHTLCNhathau" ColumnName="MaHTLCNhathau" />
+          <ScalarProperty Name="TenHTLCNhathau" ColumnName="TenHTLCNhathau" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_hinhthucqlda">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_hinhthucqlda">
+        <MappingFragment StoreEntitySet="tbl_hinhthucqlda">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MahinhthucQLDA" ColumnName="MahinhthucQLDA" />
+          <ScalarProperty Name="TenhinhthucQLDA" ColumnName="TenhinhthucQLDA" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_linhvucdauthau">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_linhvucdauthau">
+        <MappingFragment StoreEntitySet="tbl_linhvucdauthau">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Malinhvucdt" ColumnName="Malinhvucdt" />
+          <ScalarProperty Name="Tenlinhvucdt" ColumnName="Tenlinhvucdt" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_loaiCDT">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_loaiCDT">
+        <MappingFragment StoreEntitySet="tbl_loaiCDT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaloaiCDT" ColumnName="MaloaiCDT" />
+          <ScalarProperty Name="TenloaiCDT" ColumnName="TenloaiCDT" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_loaihopdong">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_loaihopdong">
+        <MappingFragment StoreEntitySet="tbl_loaihopdong">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Maloaihopdong" ColumnName="Maloaihopdong" />
+          <ScalarProperty Name="Tenloaihopdong" ColumnName="Tenloaihopdong" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_loaitongmucdautu">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_loaitongmucdautu">
+        <MappingFragment StoreEntitySet="tbl_loaitongmucdautu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaloaiTMDT" ColumnName="MaloaiTMDT" />
+          <ScalarProperty Name="TenloaiTMDT" ColumnName="TenloaiTMDT" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_mailconfigs">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_mailconfigs">
+        <MappingFragment StoreEntitySet="tbl_mailconfigs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Protocol" ColumnName="Protocol" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_nguonvon">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_nguonvon">
+        <MappingFragment StoreEntitySet="tbl_nguonvon">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Manguonvon" ColumnName="Manguonvon" />
+          <ScalarProperty Name="Tennguonvon" ColumnName="Tennguonvon" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_phanbovon">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_phanbovon">
+        <MappingFragment StoreEntitySet="tbl_phanbovon">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Maduan" ColumnName="Maduan" />
+          <ScalarProperty Name="Sotienvon" ColumnName="Sotienvon" />
+          <ScalarProperty Name="Giaidoansudung" ColumnName="Giaidoansudung" />
+          <ScalarProperty Name="Motavon" ColumnName="Motavon" />
+          <ScalarProperty Name="Idnguonvon" ColumnName="Idnguonvon" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_phuongphapchonthau">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_phuongphapchonthau">
+        <MappingFragment StoreEntitySet="tbl_phuongphapchonthau">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Mappchonthau" ColumnName="Mappchonthau" />
+          <ScalarProperty Name="Tenppchonthau" ColumnName="Tenppchonthau" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_phuongthucdauthau">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_phuongthucdauthau">
+        <MappingFragment StoreEntitySet="tbl_phuongthucdauthau">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaPTLCNhathau" ColumnName="MaPTLCNhathau" />
+          <ScalarProperty Name="TenPTLCNhathau" ColumnName="TenPTLCNhathau" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_thongbao">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_thongbao">
+        <MappingFragment StoreEntitySet="tbl_thongbao">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_thongbao_chitiet">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_thongbao_chitiet">
+        <MappingFragment StoreEntitySet="tbl_thongbao_chitiet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+          <ScalarProperty Name="IdDuan" ColumnName="IdDuan" />
+          <ScalarProperty Name="IdCDT" ColumnName="IdCDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_tieuduan">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_tieuduan">
+        <MappingFragment StoreEntitySet="tbl_tieuduan">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Maduan" ColumnName="Maduan" />
+          <ScalarProperty Name="MaCDT" ColumnName="MaCDT" />
+          <ScalarProperty Name="Matieuduan" ColumnName="Matieuduan" />
+          <ScalarProperty Name="Tentieuduan" ColumnName="Tentieuduan" />
+          <ScalarProperty Name="Diadiemkhobac" ColumnName="Diadiemkhobac" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_tinh">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_tinh">
+        <MappingFragment StoreEntitySet="tbl_tinh">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaTinh" ColumnName="MaTinh" />
+          <ScalarProperty Name="TenTinh" ColumnName="TenTinh" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_tongmucdautu">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_tongmucdautu">
+        <MappingFragment StoreEntitySet="tbl_tongmucdautu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaTMDT" ColumnName="MaTMDT" />
+          <ScalarProperty Name="GiatridutoanTMDT" ColumnName="GiatridutoanTMDT" />
+          <ScalarProperty Name="IdDuan" ColumnName="IdDuan" />
+          <ScalarProperty Name="IdTieuduan" ColumnName="IdTieuduan" />
+          <ScalarProperty Name="Landieuchinh" ColumnName="Landieuchinh" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+          <ScalarProperty Name="QDDuyetDC" ColumnName="QDDuyetDC" />
+          <ScalarProperty Name="ThoigianQDPD" ColumnName="ThoigianQDPD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_vanban_cdt_coquanbh">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_vanban_cdt_coquanbh">
+        <MappingFragment StoreEntitySet="tbl_vanban_cdt_coquanbh">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Idcdt" ColumnName="Idcdt" />
+          <ScalarProperty Name="Tencqbh" ColumnName="Tencqbh" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_vanban_coquanbanhanh">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_vanban_coquanbanhanh">
+        <MappingFragment StoreEntitySet="tbl_vanban_coquanbanhanh">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tencoquanbh" ColumnName="Tencoquanbh" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_vanban_files">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_vanban_files">
+        <MappingFragment StoreEntitySet="tbl_vanban_files">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDVanbanqd" ColumnName="IDVanbanqd" />
+          <ScalarProperty Name="VBQD_files" ColumnName="VBQD_files" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_vanban_loaivanban">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_vanban_loaivanban">
+        <MappingFragment StoreEntitySet="tbl_vanban_loaivanban">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tenloaivbqd" ColumnName="Tenloaivbqd" />
+          <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
+          <ScalarProperty Name="Orders" ColumnName="Orders" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_vanban_quyetdinh">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_vanban_quyetdinh">
+        <MappingFragment StoreEntitySet="tbl_vanban_quyetdinh">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdDuan" ColumnName="IdDuan" />
+          <ScalarProperty Name="IdCdt" ColumnName="IdCdt" />
+          <ScalarProperty Name="IdTieuduan" ColumnName="IdTieuduan" />
+          <ScalarProperty Name="IdLoaivanban" ColumnName="IdLoaivanban" />
+          <ScalarProperty Name="IdCoquanbh" ColumnName="IdCoquanbh" />
+          <ScalarProperty Name="Idcdt_coquanbh" ColumnName="Idcdt_coquanbh" />
+          <ScalarProperty Name="VBQD_no_num" ColumnName="VBQD_no_num" />
+          <ScalarProperty Name="VBQD_no_str" ColumnName="VBQD_no_str" />
+          <ScalarProperty Name="VBQD_time" ColumnName="VBQD_time" />
+          <ScalarProperty Name="VBQD_info" ColumnName="VBQD_info" />
+          <ScalarProperty Name="VBQD_files" ColumnName="VBQD_files" />
+          <ScalarProperty Name="Ghichu" ColumnName="Ghichu" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_von">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_von">
+        <MappingFragment StoreEntitySet="tbl_von">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Mavon" ColumnName="Mavon" />
+          <ScalarProperty Name="Tenvon" ColumnName="Tenvon" />
+          <ScalarProperty Name="Maduan" ColumnName="Maduan" />
+          <ScalarProperty Name="Matieuduan" ColumnName="Matieuduan" />
+          <ScalarProperty Name="Magiaidoan" ColumnName="Magiaidoan" />
+          <ScalarProperty Name="Giatritien" ColumnName="Giatritien" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Landieuchinh" ColumnName="Landieuchinh" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_von_dieuchinh">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_von_dieuchinh">
+        <MappingFragment StoreEntitySet="tbl_von_dieuchinh">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Mavon" ColumnName="Mavon" />
+          <ScalarProperty Name="Landieuchinh" ColumnName="Landieuchinh" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+          <ScalarProperty Name="Giatritien" ColumnName="Giatritien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_von_giaidoan">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_von_giaidoan">
+        <MappingFragment StoreEntitySet="tbl_von_giaidoan">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tengiaidoan" ColumnName="Tengiaidoan" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_z_file_images">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_z_file_images">
+        <MappingFragment StoreEntitySet="tbl_z_file_images">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ThangTHGN" ColumnName="ThangTHGN" />
+          <ScalarProperty Name="NamTHGN" ColumnName="NamTHGN" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="Tenthumuc" ColumnName="Tenthumuc" />
+          <ScalarProperty Name="IdLienket" ColumnName="IdLienket" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Cate" ColumnName="Cate" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_z_folders">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_z_folders">
+        <MappingFragment StoreEntitySet="tbl_z_folders">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="created_time" ColumnName="created_time" />
+          <ScalarProperty Name="Cate" ColumnName="Cate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_z_logaccess">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_z_logaccess">
+        <MappingFragment StoreEntitySet="tbl_z_logaccess">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_z_permissions">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_z_permissions">
+        <MappingFragment StoreEntitySet="tbl_z_permissions">
+          <ScalarProperty Name="Permission_Id" ColumnName="Permission_Id" />
+          <ScalarProperty Name="PermissionName" ColumnName="PermissionName" />
+          <ScalarProperty Name="PermissionDescription" ColumnName="PermissionDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_z_roles">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_z_roles">
+        <MappingFragment StoreEntitySet="tbl_z_roles">
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="RoleDescription" ColumnName="RoleDescription" />
+          <ScalarProperty Name="IsSysAdmin" ColumnName="IsSysAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_z_users">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_z_users">
+        <MappingFragment StoreEntitySet="tbl_z_users">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="IdChudautu" ColumnName="IdChudautu" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Initial" ColumnName="Initial" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="token" ColumnName="token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_z_maps">
+      <EntityTypeMapping TypeName="QLDAdataContext.tbl_z_maps">
+        <MappingFragment StoreEntitySet="tbl_z_maps">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+          <ScalarProperty Name="Tenhienthi" ColumnName="Tenhienthi" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Nguoitao" ColumnName="Nguoitao" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Nguoisua" ColumnName="Nguoisua" />
+          <ScalarProperty Name="Ngaysua" ColumnName="Ngaysua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tbl_duan_tinh" TypeName="QLDAdataContext.tbl_duan_tinh" StoreEntitySet="tbl_duan_tinh">
+      <EndProperty Name="tbl_duan">
+        <ScalarProperty Name="Id" ColumnName="IdDuan" />
+      </EndProperty>
+      <EndProperty Name="tbl_tinh">
+        <ScalarProperty Name="ID" ColumnName="idTinh" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tbl_z_role_permission" TypeName="QLDAdataContext.tbl_z_role_permission" StoreEntitySet="tbl_z_role_permission">
+      <EndProperty Name="tbl_z_permissions">
+        <ScalarProperty Name="Permission_Id" ColumnName="Permission_Id" />
+      </EndProperty>
+      <EndProperty Name="tbl_z_roles">
+        <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tbl_z_user_role" TypeName="QLDAdataContext.tbl_z_user_role" StoreEntitySet="tbl_z_user_role">
+      <EndProperty Name="tbl_z_roles">
+        <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+      </EndProperty>
+      <EndProperty Name="tbl_z_users">
+        <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
