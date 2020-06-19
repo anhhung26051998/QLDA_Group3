@@ -59,6 +59,13 @@ namespace QLDA.Controllers
         {
             return Json(userBusiness.ChangPass(UserName, PassWord, PassWordNew), JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        [AuthenToken]
+        public JsonResult ResetPass(int? id)
+        {
+            return Json(userBusiness.ResetPass(id), JsonRequestBehavior.AllowGet);
+            
+        }
 
 
     }

@@ -19,6 +19,12 @@ namespace Data.Business
         {
 
         }
+        public bool CheckRole()
+        {
+            var roleid = Int16.Parse(HttpContext.Current.Request.Headers["Role"].ToString());
+            var Role = cnn.tbl_z_roles.Find(roleid);
+            return Role.IsSysAdmin.HasValue?(Role.IsSysAdmin==true?true:false):false;
+        }
 
         public LoginModelOutput Login(string UserName, string PassWord)
         {
@@ -79,9 +85,8 @@ namespace Data.Business
         {
             try
             {
-                var roleid = Int16.Parse(HttpContext.Current.Request.Headers["Role"].ToString());
-                var Role = cnn.tbl_z_roles.Find(roleid);
-                if (Role.IsSysAdmin == true)
+                
+                if (CheckRole())
                 { if(cnn.tbl_z_users.Where(x=>x.Username.Equals(us.Username) &&( x.Inactive.HasValue ? x.Inactive != true : true)).Count()>0|| cnn.tbl_z_users.Where(x => x.IdChudautu==us.IdChudautu && (x.Inactive.HasValue ? x.Inactive != true : true)).Count()>0)
                     {
                         return new ResultModel { Status = 0, Messege = "Tài khoản đã tồn tại!" };
@@ -128,8 +133,7 @@ namespace Data.Business
                 }    
                 else if (Role.IsSysAdmin == true)
                 {
-                   
-                    data.Username = us.Username;
+                  
                     data.Title = us.Title;
                     data.Mail = us.Mail;
                     data.Lastname = us.Lastname;
@@ -287,6 +291,35 @@ namespace Data.Business
             catch
             {
                 return new ResultModel { Status = 0, Messege = "Đổi mật khẩu thất bại!" };
+            }
+        }
+
+
+        public ResultModel ResetPass (int ?id)
+        {
+            try
+            { if(CheckRole())
+                {
+                    var data = cnn.tbl_z_users.Where(u => u.User_Id == id && (u.Inactive.HasValue ? u.Inactive != true : true)).FirstOrDefault();
+                    if (id.HasValue || data != null)
+                    {
+                        data.Password = Util.CreateMD5("Abc@12345").ToLower();
+                        cnn.SaveChanges();
+                        return new ResultModel { Status = 1, Messege = "Reset mật khẩu thành công!" };
+                    }
+                    else
+                    {
+                        return new ResultModel { Status = 0, Messege = "Tài khoản không tồn tại" };
+                    }
+                }
+            else
+                {
+                    return new ResultModel { Status = 0, Messege = "Chỉ có admin mới có quyền thêm!" };
+                }    
+            }
+            catch
+            {
+                return new ResultModel { Status = 0, Messege = "Reset mật khẩu thất bại" };
             }
         }
     }

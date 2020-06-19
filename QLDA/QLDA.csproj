@@ -198,6 +198,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Template\Tonghopduan.xlsx" />
+    <Content Include="Template\ReportDuan.xlsx" />
+    <Content Include="Template\ReportVon.xlsx" />
+    <Content Include="Template\ReportTieuDuan.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

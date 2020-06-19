@@ -18,7 +18,11 @@ namespace Data.Model
         public string Tengiaidoan { get; set; }
         public Nullable<decimal> Giatritien { get; set; }
         public Nullable<int> Landieuchinh { get; set; }
+        public DateTime? Date { get; set; }
         public string Nguoitao { get; set; }
-        public string Ngaytao { get; set; }
+        public string Ngaytao
+        {
+            get { return Date.Value.ToString("dd/MM/yyyy"); }
+        }
     }
 }

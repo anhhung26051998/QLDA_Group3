@@ -6,6 +6,8 @@ using System.Web;
 using Data.Model;
 using QLDA.Common;
 using System.Web.Mvc;
+using OfficeOpenXml;
+using System.IO;
 
 namespace Data.Business
 {
@@ -110,9 +112,10 @@ namespace Data.Business
         {
             try
             {
-                var data = cnn.tbl_tieuduan.Where(u => u.MaCDT == chudautu&&u.status!=0).Select(c => new TieuDaModelOuput
+                var data = cnn.tbl_tieuduan.Where(u =>chudautu.HasValue?u.MaCDT == chudautu:true&&u.status!=0).Select(c => new TieuDaModelOuput
                 {
                     Id = c.ID,
+                    code=c.Matieuduan,
                     Maduan = c.Maduan.ToString(),
                     Tentieuda = c.Tentieuduan,
                     Diadiem = c.tbl_duan.Diadiemthuchien
@@ -362,6 +365,7 @@ namespace Data.Business
                     {
                         data.tbl_tinh.Add(cnn.tbl_tinh.Where(u => u.ID == idtinh).FirstOrDefault());
                     }
+             
 
 
                     cnn.SaveChanges();
@@ -544,6 +548,77 @@ namespace Data.Business
                 return new TieuDuanDetailModelOuput();
             }
         }
+        public ExcelPackage ReportDuan(string nameandkey, int? tinh = null, int? chudatu = null, int? id = null)
+        {
+            try
+            {
+                var data = SearchDaAdmin(nameandkey, tinh, chudatu, id);
+                FileInfo file = new FileInfo(HttpContext.Current.Server.MapPath(@"/Template/ReportDuan.xlsx"));
+                ExcelPackage pack = new ExcelPackage(file);
+                ExcelWorksheet sheet = pack.Workbook.Worksheets[0];
+                int row = 3;
+                int stt = 1;
+                foreach (var item in data)
+                {
+                    sheet.Cells[row, 1].Value = stt;
+                    sheet.Cells[row, 2].Value = item.Code;
+                    sheet.Cells[row, 3].Value = item.TenDa;
+                    sheet.Cells[row, 4].Value = item.DiaDiem;
+                    sheet.Cells[row, 5].Value = item.Chudautu;
+                    sheet.Cells[row, 6].Value = item.Diadiemkhobac;
+                    sheet.Cells[row, 7].Value = item.Hinhthucquanli;
+                    sheet.Cells[row, 8].Value = cnn.tbl_nguonvon.Where(u => u.ID == item.Idloainguonvon).Select(u => u.Tennguonvon).SingleOrDefault();
+                    sheet.Cells[row, 9].Value = item.Tongdautu;
+                    sheet.Cells[row, 10].Value = item.Thoigianthicong;
+                    sheet.Cells[row, 11].Value = item.DateComplete;
+                    sheet.Cells.AutoFitColumns();
+                    stt++;
+                    row++;
+
+                }
+                return pack;
+            }catch
+            {
+                return null;
+            }
+
+        }
+
+
+        public ExcelPackage ReportTieuDuan(int? chudautu)
+        {
+            try
+            {
+                var data = SreachTieuDuan(chudautu);
+                FileInfo file = new FileInfo(HttpContext.Current.Server.MapPath(@"/Template/ReportTieuDuan.xlsx"));
+                ExcelPackage pack = new ExcelPackage(file);
+                ExcelWorksheet sheet = pack.Workbook.Worksheets[0];
+                int row = 3;
+                int stt = 1;
+                foreach (var item in data)
+                {
+                    sheet.Cells[row, 1].Value = stt;
+                    sheet.Cells[row, 2].Value = item.code;
+                    sheet.Cells[row, 3].Value = item.Tentieuda;
+                    sheet.Cells[row, 4].Value = cnn.tbl_duan.Where(u=>u.Id.ToString()==item.Maduan).Select(u=>u.Tenduan).FirstOrDefault();
+                    sheet.Cells[row, 5].Value = item.Chudautu;
+                    sheet.Cells[row, 6].Value = item.Diadiem;
+                    sheet.Cells[row, 7].Value = item.Mota;
+           
+                    sheet.Cells.AutoFitColumns();
+                    stt++;
+                    row++;
+
+                }
+                return pack;
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
 
     }
 }

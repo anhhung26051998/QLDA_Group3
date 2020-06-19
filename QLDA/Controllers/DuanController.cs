@@ -82,9 +82,20 @@ namespace QLDA.Controllers
             return Json(duanBusiness.DeleteTieuDa(id), JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
+        [AuthenToken]
         public JsonResult TieuDaDetail(int? id)
         {
             return Json(duanBusiness.TieuDaDetail(id), JsonRequestBehavior.AllowGet);
+        }
+     
+        public FileResult ReportDuan(string nameandkey, int? tinh = null, int? chudatu = null, int? id = null)
+        {
+            return File(duanBusiness.ReportDuan(nameandkey, tinh, chudatu, id).GetAsByteArray(), "application / vnd.openxmlformats - officedocument.spreadsheetml.sheet", "ReportDuan.xlsx");
+        }
+        public FileResult ReportTieuDuan(int? chudautu)
+        {
+            return File(duanBusiness.ReportTieuDuan(chudautu).GetAsByteArray(), "application / vnd.openxmlformats - officedocument.spreadsheetml.sheet", "ReportTieuDuan.xlsx");
+
         }
     }
 }
