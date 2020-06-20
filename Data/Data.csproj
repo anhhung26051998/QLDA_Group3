@@ -371,6 +371,7 @@
     <Compile Include="Model\TieuDaModelOuput.cs" />
     <Compile Include="Model\TongMucDauTuModelOutput.cs" />
     <Compile Include="Model\UserModelOutput.cs" />
+    <Compile Include="Model\VonDieuChinhModelOutput.cs" />
     <Compile Include="Model\VonModelOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Sessions.cs" />

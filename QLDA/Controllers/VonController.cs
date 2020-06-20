@@ -57,6 +57,24 @@ namespace QLDA.Controllers
             return File(vonBusiness.ReportVon(tenvon, idduan,idtieuda).GetAsByteArray(), "application / vnd.openxmlformats - officedocument.spreadsheetml.sheet", "ReportVon.xlsx");
 
         }
+        [HttpPost]
+        [AuthenToken]
+        public JsonResult GetHistoryVon(int? idvon)
+        {
+            return Json(vonBusiness.GetHistoryVon(idvon), JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        [AuthenToken]
+        public JsonResult AddVonGD(string tengd)
+        {
+            return Json(vonBusiness.AddVonGD(tengd), JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        [AuthenToken]
+        public JsonResult SearchVonByDa(int? magd, string name, int? idtieuda)
+        {
+            return Json(vonBusiness.SearchVonByDa(magd,name,idtieuda), JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

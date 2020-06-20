@@ -108,17 +108,20 @@ namespace Data.Business
 
         }
 
-        public List<TieuDaModelOuput> SreachTieuDuan(int? chudautu)
+        public List<TieuDaModelOuput> SreachTieuDuan(int?idduan,int? chudautu,string name)
         {
             try
             {
-                var data = cnn.tbl_tieuduan.Where(u =>chudautu.HasValue?u.MaCDT == chudautu:true&&u.status!=0).Select(c => new TieuDaModelOuput
+                var data = cnn.tbl_tieuduan.Where(u => (idduan.HasValue ? u.Maduan == idduan : true) && (chudautu.HasValue ? u.MaCDT == chudautu : true) &&( name.Length > 0 ? u.Tentieuduan.Contains(name) : true) && (u.status.HasValue?u.status!= 0:true)).Select(c => new TieuDaModelOuput
                 {
                     Id = c.ID,
-                    code=c.Matieuduan,
+                    code = c.Matieuduan,
                     Maduan = c.Maduan.ToString(),
                     Tentieuda = c.Tentieuduan,
-                    Diadiem = c.tbl_duan.Diadiemthuchien
+                    Diadiem = c.tbl_duan.Diadiemthuchien,
+                    Mota = c.Mota,
+                    Chudautu = cnn.tbl_chudautu.Where(x => x.ID == c.MaCDT).Select(u => u.TenCDT).FirstOrDefault()
+
                 }).OrderByDescending(t => t.Id).ToList();
                 return data;
             }
@@ -390,6 +393,11 @@ namespace Data.Business
                 {
                     var data = cnn.tbl_duan.Find(idda);
                     data.status = 0;
+                    var tieuduan = cnn.tbl_tieuduan.Where(u => u.Maduan == data.Id);
+                    foreach (var item in tieuduan)
+                    {
+                        item.status = 0;
+                    }
                     cnn.SaveChanges();
                     return new ResultModel { Status = 1, Messege = "Xóa dự án thành công!" };
                 }
@@ -585,11 +593,11 @@ namespace Data.Business
         }
 
 
-        public ExcelPackage ReportTieuDuan(int? chudautu)
+        public ExcelPackage ReportTieuDuan(int? idduan, int? chudautu, string name)
         {
             try
             {
-                var data = SreachTieuDuan(chudautu);
+                var data = SreachTieuDuan(idduan,chudautu,name);
                 FileInfo file = new FileInfo(HttpContext.Current.Server.MapPath(@"/Template/ReportTieuDuan.xlsx"));
                 ExcelPackage pack = new ExcelPackage(file);
                 ExcelWorksheet sheet = pack.Workbook.Worksheets[0];
@@ -619,6 +627,25 @@ namespace Data.Business
 
         }
 
+        public List<tbl_von_dieuchinh> VonDieuChinh(int?idvon)
+        {
+            try
+            {
+                if(idvon.HasValue)
+                {
+                    var data = cnn.tbl_von_dieuchinh.Where(u => u.Mavon == idvon&&(cnn.tbl_von.FirstOrDefault(c=>c.ID==u.Mavon).state!=0)).ToList();
+                    return data;
+                }    
+                else
+                {
+                    return new List<tbl_von_dieuchinh>();
+                }    
+            }
+            catch
+            {
+                return new List<tbl_von_dieuchinh>();
+            }
+        }
 
     }
 }

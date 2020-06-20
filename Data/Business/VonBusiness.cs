@@ -117,22 +117,27 @@ namespace Data.Business
                     var userid = Int16.Parse(HttpContext.Current.Request.Headers["UserId"].ToString());
                     var Nguoitao = cnn.tbl_z_users.Where(u => u.User_Id == userid).Select(u => u.Username).FirstOrDefault();
                     var data = cnn.tbl_von.Where(u => u.ID == v.ID && (u.state.HasValue ? u.state != 0 : true)).FirstOrDefault();
-                    data.Maduan = v.Maduan;
+                  
                     data.Magiaidoan = v.Magiaidoan;
-                    data.Matieuduan = v.Matieuduan;
+               
                     data.Tenvon = v.Tenvon;
                     data.Ngaysua = DateTime.Now;
                     data.Nguoisua = Nguoitao;
-                    tbl_von_dieuchinh dieuchinh = new tbl_von_dieuchinh();
-                    dieuchinh.Mavon = data.ID;
-                    dieuchinh.Landieuchinh = cnn.tbl_von_dieuchinh.Where(u => u.Mavon == v.ID).Max(u => u.Landieuchinh).GetValueOrDefault() + 1;
-                    dieuchinh.state = 1;
-                    dieuchinh.Ngaytao = DateTime.Now;
-                    dieuchinh.Nguoitao = Nguoitao;
-                    dieuchinh.Giatritien = data.Giatritien;
-                    data.Landieuchinh = dieuchinh.Landieuchinh;
+                    if(data.Giatritien>v.Giatritien||data.Giatritien<v.Giatritien)
+                    {
+                        tbl_von_dieuchinh dieuchinh = new tbl_von_dieuchinh();
+                        dieuchinh.Mavon = data.ID;
+                        dieuchinh.Landieuchinh = cnn.tbl_von_dieuchinh.Where(u => u.Mavon == v.ID).Max(u => u.Landieuchinh).GetValueOrDefault() + 1;
+                        dieuchinh.state = 1;
+                        dieuchinh.Ngaytao = DateTime.Now;
+                        dieuchinh.Nguoitao = Nguoitao;
+                        dieuchinh.Giatritien = data.Giatritien;
+                        data.Landieuchinh = dieuchinh.Landieuchinh;
+                        cnn.tbl_von_dieuchinh.Add(dieuchinh);
+                    }    
+                    
                     data.Giatritien = v.Giatritien;
-                    cnn.tbl_von_dieuchinh.Add(dieuchinh);
+                    
                     cnn.SaveChanges();
                     return new ResultModel { Status = 1, Messege = "Sửa vốn thành công!" };
                 }
@@ -175,7 +180,7 @@ namespace Data.Business
         {
             try
             {
-                return cnn.tbl_von.Where(u => tenvon.Length > 0 ? u.Tenvon.Contains(tenvon) : true && idduan.HasValue ? u.Maduan == idduan : true && idtieuda.HasValue ? u.Matieuduan == idtieuda : true && (u.state.HasValue ? u.state != 0 : true)).Select(c => new VonModelOutput {
+                return cnn.tbl_von.Where(u => (tenvon.Length > 0 ? u.Tenvon.Contains(tenvon) : true) && (idduan.HasValue ? u.Maduan == idduan : true )&& (idtieuda.HasValue ? u.Matieuduan == idtieuda : true )&& (u.state.HasValue ? u.state != 0 : true)).Select(c => new VonModelOutput {
                     ID = c.ID,
                     Giatritien = c.Giatritien,
                     Landieuchinh = c.Landieuchinh,
@@ -257,6 +262,86 @@ namespace Data.Business
             catch
             {
                 return null;
+            }
+        }
+
+
+        public List<tbl_von_giaidoan> GetGD()
+        {
+            return cnn.tbl_von_giaidoan.Where(u => u.status.HasValue ? u.status != 0 : true).ToList();
+        }
+        public List<VonDieuChinhModelOutput> GetHistoryVon(int? idvon)
+        {
+            try
+            {
+                if (idvon.HasValue)
+                {
+                    return cnn.tbl_von_dieuchinh.Where(u => u.Mavon == idvon).Select(c => new VonDieuChinhModelOutput {
+                        Mavon = c.Mavon,
+                        Landieuchinh = c.Landieuchinh,
+                        Giatritien = c.Giatritien,
+                        Date = c.Ngaytao,
+                        Nguoitao=c.Nguoitao,
+
+
+
+                    }).ToList();
+                }    
+                else
+                { return new List<VonDieuChinhModelOutput>(); }    
+            }
+            catch
+            {
+                return new List<VonDieuChinhModelOutput>();
+            }
+        }
+        public ResultModel AddVonGD(string tengd)
+        {
+            try
+            {
+                if(tengd.Length>0)
+                {
+                    tbl_von_giaidoan gd = new tbl_von_giaidoan();
+                    gd.Tengiaidoan = tengd;
+                    gd.status = 1;
+                    cnn.tbl_von_giaidoan.Add(gd);
+                    cnn.SaveChanges();
+                    return new ResultModel { Status = 1, Messege = "Thêm giai đoạn thành công!" };
+                } 
+                else
+                {
+                    return new ResultModel { Status = 0, Messege = "Thêm giai đoạn thất bại!" };
+                }    
+            }
+            catch
+            {
+                return new ResultModel { Status = 0, Messege = "Thêm giai đoạn thất bại!" };
+            }
+        }
+
+
+        public List<VonModelOutput> SearchVonByDa(int?magd,string name,int?idtieuda)
+        {
+            try
+            {
+                return cnn.tbl_von.Where(u => (name.Length > 0 ? u.Tenvon.Contains(name) : true) && (magd.HasValue ? u.Magiaidoan == magd : true) && (idtieuda.HasValue ? u.Matieuduan == idtieuda : true) && (u.state.HasValue ? u.state != 0 : true)).Select(c => new VonModelOutput
+                {
+                    ID = c.ID,
+                    Giatritien = c.Giatritien,
+                    Landieuchinh = c.Landieuchinh,
+                    Tengiaidoan = cnn.tbl_von_giaidoan.Where(t => t.ID == c.Magiaidoan).Select(x => x.Tengiaidoan).FirstOrDefault(),
+                    Tenvon = c.Tenvon,
+                    Tentieuduan = cnn.tbl_tieuduan.Where(t => t.ID == c.Matieuduan).Select(x => x.Tentieuduan).FirstOrDefault(),
+                    Mavon = c.Mavon,
+                    Nguoitao = c.Nguoitao,
+                    Date = c.Ngaytao,
+
+
+                }).OrderByDescending(t => t.ID).ToList();
+            }
+            catch
+            {
+                return new List<VonModelOutput>();
             }
         }
     }

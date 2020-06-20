@@ -127,7 +127,7 @@ namespace Data.Business
                 var roleid = Int16.Parse(HttpContext.Current.Request.Headers["Role"].ToString());
                 var Role = cnn.tbl_z_roles.Find(roleid);
                 var data = cnn.tbl_z_users.Find(us.User_Id);
-                if (cnn.tbl_z_users.Where(x=>x.Username.Equals(us.Username) &&!x.Username.Equals(us.Username) &&( x.Inactive.HasValue ? x.Inactive != true : true)).Count()>0||(data.IdChudautu!=us.IdChudautu?cnn.tbl_z_users.Where(u=>u.IdChudautu==us.IdChudautu).Count()>0:false))
+                if ( (data.IdChudautu!=us.IdChudautu&&us.IdChudautu!=null)?cnn.tbl_z_users.Where(u=>u.IdChudautu==us.IdChudautu).Count()>0:false)
                 {
                     return new ResultModel { Status = 0, Messege = "Tài khoản đã tồn tại!" };
                 }    
@@ -150,8 +150,7 @@ namespace Data.Business
                     else
                     {
                         data.tbl_z_roles1.Add(cnn.tbl_z_roles.Where(u => u.Role_Id == us.IdRole).FirstOrDefault());
-                    }    
-                    data.Password = Util.CreateMD5(us.Password).ToLower();
+                    }   
                     cnn.SaveChanges();
                     return new ResultModel { Status = 1, Messege = "Sửa tài khoản thành công!" };
                 }
@@ -271,7 +270,7 @@ namespace Data.Business
                 {
                     return new ResultModel { Status = 0, Messege = "Tài khoản không tồn tại!" };
                 }
-                else
+                else if (Regex.IsMatch(PassWord, @"^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#\$%\.\\/^\&*\)\(+=._-]).{8,20}$"))
                 {
                     var pass = Util.CreateMD5(PassWord).ToLower();
                     var data = cnn.tbl_z_users.Where(u => u.Username.Equals(UserName) && u.Password.Equals(pass)).FirstOrDefault();
@@ -286,6 +285,10 @@ namespace Data.Business
                         return new ResultModel { Status = 0, Messege = "Tài khoản không tồn tại!" };
                     }
                 }
+                else
+                {
+                    return new ResultModel { Status = 0, Messege = "Mật khẩu không hợp lệ!" };
+                }    
                 
             }
             catch

@@ -29,9 +29,9 @@ namespace QLDA.Controllers
         {
             return Json(duanBusiness.DaDetail(id), JsonRequestBehavior.AllowGet);
         }
-        public JsonResult SreachTieuDuan(int?chudautu)
+        public JsonResult SreachTieuDuan(int? idduan, int? chudautu, string name)
         {
-            return Json(duanBusiness.SreachTieuDuan(chudautu), JsonRequestBehavior.AllowGet);
+            return Json(duanBusiness.SreachTieuDuan(idduan,chudautu,name), JsonRequestBehavior.AllowGet);
         }
         public JsonResult Gettongdautu(int?id,int?type)
         {
@@ -92,10 +92,9 @@ namespace QLDA.Controllers
         {
             return File(duanBusiness.ReportDuan(nameandkey, tinh, chudatu, id).GetAsByteArray(), "application / vnd.openxmlformats - officedocument.spreadsheetml.sheet", "ReportDuan.xlsx");
         }
-        public FileResult ReportTieuDuan(int? chudautu)
+        public FileResult ReportTieuDuan(int? idduan, int? chudautu, string name)
         {
-            return File(duanBusiness.ReportTieuDuan(chudautu).GetAsByteArray(), "application / vnd.openxmlformats - officedocument.spreadsheetml.sheet", "ReportTieuDuan.xlsx");
-
+            return File(duanBusiness.ReportTieuDuan(idduan, chudautu, name).GetAsByteArray(), "application / vnd.openxmlformats - officedocument.spreadsheetml.sheet", "ReportTieuDuan.xlsx");
         }
     }
 }
