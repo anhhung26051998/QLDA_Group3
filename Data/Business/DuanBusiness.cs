@@ -250,7 +250,7 @@ namespace Data.Business
                   QuyetDinh = c.QDduyetCTDT,
                   Diadiemkhobac = c.Diadiemkhobac,
                   Urlmap = c.UrlMaps,
-                Datethicong=c.Thoigiankhoicong,
+                   Datethicong=c.Thoigiankhoicong,
                   Idhinhthucquanli = c.tbl_hinhthucqlda.ID,
                   Idloainguonvon = c.Idloainguonvon,
                   Idchudautu = c.IdChudautu,
