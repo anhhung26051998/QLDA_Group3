@@ -159,9 +159,9 @@ namespace Data.Business
                 Value = c.Tenduan
             }).OrderByDescending(t=>t.Value).ToList();
         }
-        public List<DropDownModelOutput> GetTieuDuan()
+        public List<DropDownModelOutput> GetTieuDuan(int?idduan)
         {
-            return cnn.tbl_tieuduan.Where(u => (u.status.HasValue ? u.status != 0 : true)).Select(c => new DropDownModelOutput
+            return cnn.tbl_tieuduan.Where(u =>(idduan.HasValue?u.Maduan==idduan:true)&& (u.status.HasValue ? u.status != 0 : true)).Select(c => new DropDownModelOutput
             {
                 Id = c.ID,
                 Value = c.Tentieuduan

@@ -132,4 +132,3 @@ C:\PTPM\QLDA\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
 C:\PTPM\QLDA\Data\obj\Debug\Data.csproj.CopyComplete
 C:\PTPM\QLDA\Data\obj\Debug\Data.dll
 C:\PTPM\QLDA\Data\obj\Debug\Data.pdb
-C:\PTPM\QLDA\Data\obj\Debug\Data.csprojAssemblyReference.cache

@@ -44,9 +44,9 @@ namespace QLDA.Controllers
         {
             return Json(dropDownBusiness.GetDuan(), JsonRequestBehavior.AllowGet);
         }
-        public JsonResult GetTieuDuan()
+        public JsonResult GetTieuDuan(int? idduan)
         {
-            return Json(dropDownBusiness.GetTieuDuan(), JsonRequestBehavior.AllowGet);
+            return Json(dropDownBusiness.GetTieuDuan(idduan), JsonRequestBehavior.AllowGet);
         }
     }
 }

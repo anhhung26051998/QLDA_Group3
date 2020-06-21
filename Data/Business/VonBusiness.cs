@@ -320,24 +320,31 @@ namespace Data.Business
         }
 
 
-        public List<VonModelOutput> SearchVonByDa(int?magd,string name,int?idtieuda)
+        public List<VonModelOutput> SearchVonByDa(int? idduan,int?magd,string name,int?idtieuda)
         {
             try
             {
-                return cnn.tbl_von.Where(u => (name.Length > 0 ? u.Tenvon.Contains(name) : true) && (magd.HasValue ? u.Magiaidoan == magd : true) && (idtieuda.HasValue ? u.Matieuduan == idtieuda : true) && (u.state.HasValue ? u.state != 0 : true)).Select(c => new VonModelOutput
+                if(idduan.HasValue)
                 {
-                    ID = c.ID,
-                    Giatritien = c.Giatritien,
-                    Landieuchinh = c.Landieuchinh,
-                    Tengiaidoan = cnn.tbl_von_giaidoan.Where(t => t.ID == c.Magiaidoan).Select(x => x.Tengiaidoan).FirstOrDefault(),
-                    Tenvon = c.Tenvon,
-                    Tentieuduan = cnn.tbl_tieuduan.Where(t => t.ID == c.Matieuduan).Select(x => x.Tentieuduan).FirstOrDefault(),
-                    Mavon = c.Mavon,
-                    Nguoitao = c.Nguoitao,
-                    Date = c.Ngaytao,
+                    return cnn.tbl_von.Where(u =>(u.Maduan==idduan)&& (name.Length > 0 ? u.Tenvon.Contains(name) : true) && (magd.HasValue ? u.Magiaidoan == magd : true) && (idtieuda.HasValue ? u.Matieuduan == idtieuda : true) && (u.state.HasValue ? u.state != 0 : true)).Select(c => new VonModelOutput
+                    {
+                        ID = c.ID,
+                        Giatritien = c.Giatritien,
+                        Landieuchinh = c.Landieuchinh,
+                        Tengiaidoan = cnn.tbl_von_giaidoan.Where(t => t.ID == c.Magiaidoan).Select(x => x.Tengiaidoan).FirstOrDefault(),
+                        Tenvon = c.Tenvon,
+                        Tentieuduan = cnn.tbl_tieuduan.Where(t => t.ID == c.Matieuduan).Select(x => x.Tentieuduan).FirstOrDefault(),
+                        Mavon = c.Mavon,
+                        Nguoitao = c.Nguoitao,
+                        Date = c.Ngaytao,
 
 
-                }).OrderByDescending(t => t.ID).ToList();
+                    }).OrderByDescending(t => t.ID).ToList();
+                } 
+                else
+                {
+                    return new List<VonModelOutput>();
+                }    
             }
             catch
             {

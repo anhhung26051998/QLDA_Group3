@@ -37,7 +37,7 @@ namespace QLDA.Controllers
         {
             return Json(duanBusiness.Gettongdautu(id,type), JsonRequestBehavior.AllowGet);
         }
-        [AuthenToken]
+  
         public JsonResult SearchDaAdmin(string nameandkey, int? tinh = null, int? chudatu = null,int?id=null)
         {
             return Json(duanBusiness.SearchDaAdmin(nameandkey, tinh, chudatu,id), JsonRequestBehavior.AllowGet);

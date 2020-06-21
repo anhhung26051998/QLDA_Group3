@@ -71,9 +71,9 @@ namespace QLDA.Controllers
         }
         [HttpPost]
         [AuthenToken]
-        public JsonResult SearchVonByDa(int? magd, string name, int? idtieuda)
+        public JsonResult SearchVonByDa(int? idduan,int? magd, string name, int? idtieuda)
         {
-            return Json(vonBusiness.SearchVonByDa(magd,name,idtieuda), JsonRequestBehavior.AllowGet);
+            return Json(vonBusiness.SearchVonByDa(idduan,magd,name,idtieuda), JsonRequestBehavior.AllowGet);
         }
 
     }
