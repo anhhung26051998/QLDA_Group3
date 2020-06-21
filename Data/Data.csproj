@@ -364,6 +364,7 @@
       <DependentUpon>QLDAdataContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\ChuDauTuModelOutput.cs" />
+    <Compile Include="Model\DuAnModelInput.cs" />
     <Compile Include="Model\TinhModelOutput.cs" />
     <Compile Include="Model\LoginInputModel.cs" />
     <Compile Include="Model\LoginModelOutput.cs" />

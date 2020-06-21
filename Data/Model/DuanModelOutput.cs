@@ -27,8 +27,9 @@ namespace Data.Model
     public class DuaDetailModelOutput:DuanNoiBatOutputModel
     {  public string Code { get; set; }
         public string QuyetDinh { get; set; }
-        public string NgayPheDuyet { get; set; }
+        public string NgayPheDuyet { get { return Datepheduyet.HasValue ? Datepheduyet.Value.ToString("dd/MM/yyyy") : "Chưa cập nhật"; } }
         public string Diadiemkhobac { get; set; }
+        public DateTime? Datepheduyet { get; set; }
         public DateTime? Datethicong { get; set; }
         public string Thoigianthicong { get { return Datethicong.HasValue ? Datethicong.Value.ToString("dd/MM/yyyy"):"Chưa cập nhật"; } }
         public int Idhinhthucquanli { get; set; }

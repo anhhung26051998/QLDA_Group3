@@ -44,18 +44,18 @@ namespace QLDA.Controllers
         }
         [HttpPost]
         [AuthenToken]
-        public JsonResult AddDuan(tbl_duan da,int?idtinh)
+        public JsonResult AddDuan(tbl_duan da, string Thoigiankhoicong, string Thoigianhoanthanh, string NgaypheduyetCTDT, string Ngaypheduyet, int? idtinh)
         {
-            return Json(duanBusiness.AddDuan(da,idtinh), JsonRequestBehavior.AllowGet);
+            return Json(duanBusiness.AddDuan(da, Thoigiankhoicong, Thoigianhoanthanh, NgaypheduyetCTDT, Ngaypheduyet, idtinh), JsonRequestBehavior.AllowGet);
         }
 
      
         [HttpPost]
         [AuthenToken]
 
-        public JsonResult EditDa(tbl_duan da, int? idtinh)
+        public JsonResult EditDa(tbl_duan da, string Thoigiankhoicong, string Thoigianhoanthanh, string NgaypheduyetCTDT, string Ngaypheduyet, int? idtinh)
         {
-            return Json(duanBusiness.EditDa(da, idtinh), JsonRequestBehavior.AllowGet);
+            return Json(duanBusiness.EditDa(da, Thoigiankhoicong, Thoigianhoanthanh, NgaypheduyetCTDT, Ngaypheduyet, idtinh), JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         [AuthenToken]

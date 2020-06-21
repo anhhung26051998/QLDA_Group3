@@ -8,6 +8,7 @@ using QLDA.Common;
 using System.Web.Mvc;
 using OfficeOpenXml;
 using System.IO;
+using Data.Utils;
 
 namespace Data.Business
 {
@@ -79,7 +80,7 @@ namespace Data.Business
                     Date=c.Thoigianhoanthanh,
                     Chudautu = c.IdChudautu.HasValue ? cnn.tbl_chudautu.Where(k => k.ID == c.IdChudautu).Select(b => b.TenCDT).FirstOrDefault() : "Chưa Cập Nhật",
                     QuyetDinh = c.QDpheduyetDADT,
-                    NgayPheDuyet = c.Ngaypheduyet.Value.ToString(),
+                    Datepheduyet = c.Ngaypheduyet,
                     Diadiemkhobac = c.Diadiemkhobac,
                     Hinhthucquanli = c.tbl_hinhthucqlda.TenhinhthucQLDA,
                     Loaivon = c.tbl_von.Select(x => x.Tenvon).FirstOrDefault(),
@@ -244,13 +245,13 @@ namespace Data.Business
                   DiaDiem = c.Diadiemthuchien,
                   Maduan = c.Maduan,
                   Chudautu = cnn.tbl_chudautu.Where(x => x.ID == c.IdChudautu).Select(x => x.TenCDT).FirstOrDefault(),
-                  NgayPheDuyet = c.Ngaypheduyet.Value.ToString(),
+                  Datepheduyet = c.Ngaypheduyet,
                   Date = c.Thoigianhoanthanh,
                   Tongdautu = c.Tongmucdautu,
                   QuyetDinh = c.QDduyetCTDT,
                   Diadiemkhobac = c.Diadiemkhobac,
                   Urlmap = c.UrlMaps,
-                   Datethicong=c.Thoigiankhoicong,
+                  Datethicong=c.Thoigiankhoicong,
                   Idhinhthucquanli = c.tbl_hinhthucqlda.ID,
                   Idloainguonvon = c.Idloainguonvon,
                   Idchudautu = c.IdChudautu,
@@ -283,7 +284,7 @@ namespace Data.Business
 
         }
 
-        public ResultModel AddDuan(tbl_duan da, int? idtinh)
+        public ResultModel AddDuan(tbl_duan da,string Thoigiankhoicong,string Thoigianhoanthanh,string NgaypheduyetCTDT,string Ngaypheduyet, int? idtinh)
         {
             try
             {
@@ -302,6 +303,10 @@ namespace Data.Business
                         da.tbl_tinh.Add(cnn.tbl_tinh.Where(u => u.ID == idtinh).FirstOrDefault());
                         da.code = "Code" + rd.Next(0, 99999999).ToString();
                         da.status = 1;
+                        da.Ngaypheduyet = Util.ConvertDate(Ngaypheduyet);
+                        da.NgaypheduyetCTDT = Util.ConvertDate(NgaypheduyetCTDT);
+                        da.Thoigiankhoicong = Util.ConvertDate(Thoigiankhoicong);
+                        da.Thoigianhoanthanh = Util.ConvertDate(Thoigianhoanthanh);
                         da.Ngaytao = DateTime.Now;
                         da.Nguoitao = Nguoitao;
                         cnn.tbl_duan.Add(da);
@@ -320,7 +325,7 @@ namespace Data.Business
             }
         }
 
-        public ResultModel EditDa(tbl_duan da, int? idtinh)
+        public ResultModel EditDa(tbl_duan da, string Thoigiankhoicong, string Thoigianhoanthanh, string NgaypheduyetCTDT, string Ngaypheduyet, int? idtinh)
         {
           
             try
@@ -345,16 +350,16 @@ namespace Data.Business
                     data.nam_hoanthanh = da.nam_hoanthanh;
                     data.nam_khoicong = da.nam_khoicong;
                     data.tbl_tinh.Clear();
-                    da.tbl_tinh.Add(cnn.tbl_tinh.Where(u => u.ID == idtinh).FirstOrDefault());
-                    data.Ngaypheduyet = da.Ngaypheduyet;
+                    da.tbl_tinh.Add(cnn.tbl_tinh.Where(u => u.ID == idtinh).FirstOrDefault());                
                     data.Urlfile = da.Urlfile;
                     data.UrlMaps = da.UrlMaps;
-                    data.Tongmucdautu = da.Tongmucdautu;
-                    data.NgaypheduyetCTDT = da.NgaypheduyetCTDT;
+                    data.Tongmucdautu = da.Tongmucdautu;             
                     data.Ngaysua = DateTime.Now;             
                     data.Ngaytao = da.Ngaytao;
-                    data.QDduyetCTDT = da.QDduyetCTDT;
-                    data.QDpheduyetDADT = da.QDpheduyetDADT;
+                    data.Ngaypheduyet = Util.ConvertDate(Ngaypheduyet);
+                    data.NgaypheduyetCTDT = Util.ConvertDate(NgaypheduyetCTDT);
+                    data.Thoigiankhoicong = Util.ConvertDate(Thoigiankhoicong);
+                    data.Thoigianhoanthanh = Util.ConvertDate(Thoigianhoanthanh);
                     data.Nguoisua = Nguoisua.Username;
                     data.status = da.status;
                     data.stt = data.stt;
